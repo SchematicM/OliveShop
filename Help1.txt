@@ -1,0 +1,8 @@
+1. You should download XAMPP (version 7.4.5 / PHP 7.4.5) from https://www.apachefriends.org/ru/download.html
+2. When you install it, open it and you should click on buttons START opposite Apache and MySQL
+3. Then open a folder where you installed XAMPP -> open 'htdocs' -> and insert a folder M-Dev-Store (from our repository on git)
+
+4. Also you should download Brackets (editor) from http://brackets.io
+5. You can open this folder M-Dev-Store in Brackets
+If you will receive an ERROR "PHP Runtime Not Found....." this small video will help you https://www.youtube.com/watch?v=HiuYce7bclU
+6. Then in browser you can open our localhost http://localhost/m-dev-store/
