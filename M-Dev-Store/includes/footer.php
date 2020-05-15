@@ -106,7 +106,7 @@
     <div class="container"><!-- container Begin -->
         <div class="col-md-12"><!-- col-md-6 Begin -->
             
-            <p class="text-center">&copy; Designed by <a style="color:#cccccc;" href="https://www.instagram.com/schematic.m/?hl=ru"><b> Khoma Marta</a></b> & <b><a style="color:#cccccc;" href="https://www.instagram.com/solomiya.rybai/?hl=ru">Rybay Solomia</a></b> in 2020</p>
+            <p class="text-center">&copy; Designed by <a style="color:#cccccc;" href="https://www.instagram.com/schematic.m/?hl=ru"><b> Khoma Marta</a></b> & <b><a style="color:#cccccc;" href="https://www.instagram.com/solomiya.rybai/?hl=ru">Rybai Solomiya</a></b> in 2020</p>
             
         </div><!-- col-md-6 Finish -->
 
