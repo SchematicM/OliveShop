@@ -264,20 +264,20 @@
                        <div class="row" id="thumbs"><!-- row Begin -->
                            
                            <div class="col-xs-4"><!-- col-xs-4 Begin -->
-                               <a href="#" class="thumb"><!-- thumb Begin -->
-                                   <img src="admin_area/product_images/product-1.jpg" alt="product 1" class="img-responsive">
+                               <a data-target="#myCarousel" data-slide-to="0" href="#" class="thumb"><!-- thumb Begin -->
+                                   <img src="admin_area/product_images/product-3a.jpg" alt="product 1" class="img-responsive">
                                </a><!-- thumb Finish -->
                            </div><!-- col-xs-4 Finish -->
                            
                            <div class="col-xs-4"><!-- col-xs-4 Begin -->
-                               <a href="#" class="thumb"><!-- thumb Begin -->
-                                   <img src="admin_area/product_images/product-2.jpg" alt="product 2" class="img-responsive">
+                               <a data-target="#myCarousel" data-slide-to="1" href="#" class="thumb"><!-- thumb Begin -->
+                                   <img src="admin_area/product_images/product-3b.jpg" alt="product 2" class="img-responsive">
                                </a><!-- thumb Finish -->
                            </div><!-- col-xs-4 Finish -->
                            
                            <div class="col-xs-4"><!-- col-xs-4 Begin -->
-                               <a href="#" class="thumb"><!-- thumb Begin -->
-                                   <img src="admin_area/product_images/Product-4a.jpg" alt="product 4" class="img-responsive">
+                               <a data-target="#myCarousel" data-slide-to="2" href="#" class="thumb"><!-- thumb Begin -->
+                                   <img src="admin_area/product_images/Product-3c.jpg" alt="product 4" class="img-responsive">
                                </a><!-- thumb Finish -->
                            </div><!-- col-xs-4 Finish -->
                            
