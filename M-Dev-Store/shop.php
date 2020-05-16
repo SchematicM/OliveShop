@@ -29,7 +29,7 @@
                        <a href="customer_register.php">Register</a>
                    </li>
                    <li>
-                       <a href="checkout.php">My Account</a>
+                       <a href="customer/my_account.php">My Account</a>
                    </li>
                    <li>
                        <a href="cart.php">Go To Cart</a>
@@ -90,7 +90,7 @@
                            <a href="shop.php">Shop</a>
                        </li>
                        <li>
-                           <a href="checkout.php">My Account</a>
+                           <a href="customer/my_account.php">My Account</a>
                        </li>
                        <li>
                            <a href="cart.php">Shopping Cart</a>
@@ -381,7 +381,7 @@
                    
                </div><!-- product Finish -->
                        
-                    </div><!-- col-md-4 col-sm-6 center-responsive Finish -->
+                   </div><!-- col-md-4 col-sm-6 center-responsive Finish -->
                    <div class="col-md-4 col-sm-6 center-responsive"><!-- col-md-4 col-sm-6 center-responsive Begin -->
                        
                        <div class="product"><!-- product Begin -->
@@ -417,7 +417,7 @@
                        </p>
                        
                    </div><!-- text Finish -->
-                                      
+                   
                </div><!-- product Finish -->
                        
                    </div><!-- col-md-4 col-sm-6 center-responsive Finish -->
@@ -425,7 +425,7 @@
                
                <center>
                    <ul class="pagination">
-                       <li class="active;"><a href="#">First Page</a></li>
+                       <li><a href="#">First Page</a></li>
                        <li><a href="#">1</a></li>
                        <li><a href="#">2</a></li>
                        <li><a href="#">3</a></li>
