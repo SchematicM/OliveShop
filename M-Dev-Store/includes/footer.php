@@ -104,14 +104,9 @@
 
 <div id="copyright"><!-- #copyright Begin -->
     <div class="container"><!-- container Begin -->
-        <div class="col-md-6"><!-- col-md-6 Begin -->
+        <div class="col-md-12"><!-- col-md-6 Begin -->
             
-            <p class="pull-left">&copy; 2018 M-Dev Store All Rights Reserve</p>
-            
-        </div><!-- col-md-6 Finish -->
-        <div class="col-md-6"><!-- col-md-6 Begin -->
-            
-            <p class="pull-right">Theme by: <a href="#">MrGhie</a></p>
+            <p class="text-center">&copy; Designed by <a style="color:#cccccc;" href="https://www.instagram.com/schematic.m/?hl=ru"><b> Khoma Marta</a></b> & <b><a style="color:#cccccc;" href="https://www.instagram.com/solomiya.rybai/?hl=ru">Rybai Solomiya</a></b> in 2020</p>
             
         </div><!-- col-md-6 Finish -->
     </div><!-- container Finish -->

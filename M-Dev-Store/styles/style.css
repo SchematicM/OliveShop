@@ -338,6 +338,15 @@ body{
     font-weight: 700;
 }
 
+/*  For Firefox Only  */
+
+@-moz-document url-prefix(){
+    .form-height-custom{
+        height: auto;
+    }
+}
+
+
 /*  Footer Styles  */
 
 #footer{
