@@ -160,4 +160,3 @@ include("functions/functions.php");
        </div><!-- container Finish -->
        
    </div><!-- navbar navbar-default Finish -->
-   
