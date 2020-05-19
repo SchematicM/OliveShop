@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 11, 2018 at 06:08 PM
+-- Generation Time: Dec 26, 2018 at 11:40 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -40,7 +40,7 @@ CREATE TABLE `cart` (
 --
 
 INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `size`) VALUES
-(12, '::1', 5, 'Large');
+(15, '::1', 1, 'Small');
 
 -- --------------------------------------------------------
 
@@ -88,8 +88,65 @@ CREATE TABLE `customers` (
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`) VALUES
-(4, 'Testing Name', 'Testingemail@yahoo.uk', 'Anypassword', 'Indonesia', 'Bandung', '0817-2837-9292', 'Heaven', 'Arint-Rianti.jpg', '::1'),
-(5, 'Test Without Buying', 'NoBuy@gmail.uk', 'koiwakskskd', 'England', 'Hyde Park', '83728190', 'Benington', 'h-man.jpg', '::1');
+(4, 'Noni Cantik', 'Testingemail@yahoo.uk', 'Anypassword', 'Indonesia', 'Bandung', '0817-2837-9292', 'Heaven', 'Arint-Rianti.jpg', '::1'),
+(5, 'Gantengan', 'NoBuy@gmail.uk', 'mypassword', 'England', 'Hyde Park', '83728190', 'Benington', 'h-man.jpg', '::1');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `customer_orders`
+--
+
+CREATE TABLE `customer_orders` (
+  `order_id` int(10) NOT NULL,
+  `customer_id` int(10) NOT NULL,
+  `due_amount` int(100) NOT NULL,
+  `invoice_no` int(100) NOT NULL,
+  `qty` int(10) NOT NULL,
+  `size` text NOT NULL,
+  `order_date` date NOT NULL,
+  `order_status` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `customer_orders`
+--
+
+INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice_no`, `qty`, `size`, `order_date`, `order_status`) VALUES
+(7, 5, 225, 892058920, 5, 'Large', '2018-12-20', 'pending'),
+(8, 5, 196, 892058920, 2, 'Medium', '2018-12-20', 'pending'),
+(9, 4, 1200, 2051256671, 4, 'Medium', '2018-12-20', 'pending'),
+(10, 4, 180, 2051256671, 4, 'Small', '2018-12-20', 'pending'),
+(11, 5, 40, 690312574, 1, 'Small', '2018-12-21', 'pending'),
+(12, 4, 99, 2022964019, 1, 'Small', '2018-12-27', 'pending');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `pending_orders`
+--
+
+CREATE TABLE `pending_orders` (
+  `order_id` int(10) NOT NULL,
+  `customer_id` int(10) NOT NULL,
+  `invoice_no` int(10) NOT NULL,
+  `product_id` text NOT NULL,
+  `qty` int(10) NOT NULL,
+  `size` text NOT NULL,
+  `order_status` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `pending_orders`
+--
+
+INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `size`, `order_status`) VALUES
+(3, 5, 892058920, '7', 5, 'Large', 'pending'),
+(4, 5, 892058920, '14', 2, 'Medium', 'pending'),
+(5, 4, 2051256671, '10', 4, 'Medium', 'pending'),
+(6, 4, 2051256671, '12', 4, 'Small', 'pending'),
+(7, 5, 690312574, '13', 1, 'Small', 'pending'),
+(8, 4, 2022964019, '16', 1, 'Small', 'pending');
 
 -- --------------------------------------------------------
 
@@ -201,6 +258,18 @@ ALTER TABLE `customers`
   ADD PRIMARY KEY (`customer_id`);
 
 --
+-- Indexes for table `customer_orders`
+--
+ALTER TABLE `customer_orders`
+  ADD PRIMARY KEY (`order_id`);
+
+--
+-- Indexes for table `pending_orders`
+--
+ALTER TABLE `pending_orders`
+  ADD PRIMARY KEY (`order_id`);
+
+--
 -- Indexes for table `products`
 --
 ALTER TABLE `products`
@@ -233,6 +302,18 @@ ALTER TABLE `categories`
 --
 ALTER TABLE `customers`
   MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `customer_orders`
+--
+ALTER TABLE `customer_orders`
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+
+--
+-- AUTO_INCREMENT for table `pending_orders`
+--
+ALTER TABLE `pending_orders`
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
 -- AUTO_INCREMENT for table `products`
