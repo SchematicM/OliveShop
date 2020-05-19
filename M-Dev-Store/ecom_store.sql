@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Час створення: Трв 19 2020 р., 13:42
+-- Час створення: Трв 19 2020 р., 14:08
 -- Версія сервера: 10.4.11-MariaDB
 -- Версія PHP: 7.4.5
 
@@ -20,6 +20,27 @@ SET time_zone = "+00:00";
 --
 -- База даних: `ecom_store`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблиці `cart`
+--
+
+CREATE TABLE `cart` (
+  `p_id` int(10) NOT NULL,
+  `ip_add` varchar(255) NOT NULL,
+  `qty` int(10) NOT NULL,
+  `size` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп даних таблиці `cart`
+--
+
+INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `size`) VALUES
+(9, '::1', 3, 'Small'),
+(15, '::1', 2, 'Medium');
 
 -- --------------------------------------------------------
 
@@ -133,6 +154,12 @@ INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`) VALUES
 --
 -- Індекси збережених таблиць
 --
+
+--
+-- Індекси таблиці `cart`
+--
+ALTER TABLE `cart`
+  ADD PRIMARY KEY (`p_id`);
 
 --
 -- Індекси таблиці `categories`
