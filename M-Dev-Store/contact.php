@@ -1,10 +1,10 @@
 <?php 
-
+    
     $active='Contact';
     include("includes/header.php");
 
 ?>
-   
+  
    <div id="content"><!-- #content Begin -->
        <div class="container"><!-- container Begin -->
            <div class="col-md-12"><!-- col-md-12 Begin -->
@@ -94,6 +94,42 @@
                            
                        </form><!-- form Finish -->
                        
+                       <?php 
+                       
+                       if(isset($_POST['submit'])){
+                           
+                           /// Admin receives message with this ///
+                           
+                           $sender_name = $_POST['name'];
+                           
+                           $sender_email = $_POST['email'];
+                           
+                           $sender_subject = $_POST['subject'];
+                           
+                           $sender_message = $_POST['message'];
+                           
+                           $receiver_email = "tyxa.khoma17@gmail.com";
+                           
+                           mail($receiver_email,$sender_name,$sender_subject,$sender_message,$sender_email);
+                           
+                           /// Auto reply to sender with this ///
+                           
+                           $email = $_POST['email'];
+                           
+                           $subject = "Welcome to my website";
+                           
+                           $msg = "Thanks for sending us message. ASAP we will reply your message";
+                           
+                           $from = "tyxa.khoma17@gmail.com";
+                           
+                           mail($email,$subject,$msg,$from);
+                           
+                           echo "<h2 align='center'> Your message has sent sucessfully </h2>";
+                           
+                       }
+                       
+                       ?>
+                       
                    </div><!-- box-header Finish -->
                    
                </div><!-- box Finish -->
@@ -111,7 +147,5 @@
     
     <script src="js/jquery-331.min.js"></script>
     <script src="js/bootstrap-337.min.js"></script>
-    
-    
 </body>
 </html>
