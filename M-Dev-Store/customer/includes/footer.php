@@ -17,8 +17,37 @@
                 <h4>User Section</h4>
                 
                 <ul><!-- ul Begin -->
-                    <li><a href="checkout.php">Login</a></li>
-                    <li><a href="customer_register.php">Register</a></li>
+                           
+                           <?php 
+                           
+                           if(!isset($_SESSION['customer_email'])){
+                               
+                               echo"<a href='checkout.php'>Login</a>";
+                               
+                           }else{
+                               
+                              echo"<a href='my_account.php?my_orders'>My Account</a>"; 
+                               
+                           }
+                           
+                           ?>
+                           
+                    <li>
+                           <?php 
+                           
+                           if(!isset($_SESSION['customer_email'])){
+                               
+                               echo"<a href='checkout.php'>Login</a>";
+                               
+                           }else{
+                               
+                              echo"<a href='my_account.php?edit_account'>Edit Account</a>"; 
+                               
+                           }
+                           
+                           ?>  
+                    </li>  
+                           
                 </ul><!-- ul Finish -->
                 
                 <hr class="hidden-md hidden-lg hidden-sm">
@@ -46,7 +75,7 @@
                             
                                 <li>
                                 
-                                    <a href='shop.php?p_cat=$p_cat_id'>
+                                    <a href='../shop.php?p_cat=$p_cat_id'>
                                     
                                         $p_cat_title
                                     
@@ -80,7 +109,7 @@
                     
                 </p><!-- p Finish -->
                 
-                <a href="contact.php">Check Our Contact Page</a>
+                <a href="../contact.php">Check Our Contact Page</a>
                 
                 <hr class="hidden-md hidden-lg">
                 
@@ -115,11 +144,11 @@
                 <h4>Keep In Touch</h4>
                 
                 <p class="social">
-                    <a href="#" class="fa fa-facebook"></a>
-                    <a href="#" class="fa fa-twitter"></a>
-                    <a href="#" class="fa fa-instagram"></a>
-                    <a href="#" class="fa fa-google-plus"></a>
-                    <a href="#" class="fa fa-envelope"></a>
+                    <a href="../#" class="fa fa-facebook"></a>
+                    <a href="../#" class="fa fa-twitter"></a>
+                    <a href="../#" class="fa fa-instagram"></a>
+                    <a href="../#" class="fa fa-google-plus"></a>
+                    <a href="../#" class="fa fa-envelope"></a>
                 </p>
                 
             </div>
