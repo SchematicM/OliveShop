@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Dec 26, 2018 at 11:40 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Хост: 127.0.0.1
+-- Час створення: Трв 20 2020 р., 12:37
+-- Версія сервера: 10.4.11-MariaDB
+-- Версія PHP: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ecom_store`
+-- База даних: `ecom_store`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Структура таблиці `cart`
 --
 
 CREATE TABLE `cart` (
@@ -35,17 +34,10 @@ CREATE TABLE `cart` (
   `size` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `cart`
---
-
-INSERT INTO `cart` (`p_id`, `ip_add`, `qty`, `size`) VALUES
-(15, '::1', 1, 'Small');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Структура таблиці `categories`
 --
 
 CREATE TABLE `categories` (
@@ -55,7 +47,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `categories`
+-- Дамп даних таблиці `categories`
 --
 
 INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_desc`) VALUES
@@ -67,7 +59,7 @@ INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_desc`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customers`
+-- Структура таблиці `customers`
 --
 
 CREATE TABLE `customers` (
@@ -84,17 +76,17 @@ CREATE TABLE `customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `customers`
+-- Дамп даних таблиці `customers`
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`) VALUES
-(4, 'Noni Cantik', 'Testingemail@yahoo.uk', 'Anypassword', 'Indonesia', 'Bandung', '0817-2837-9292', 'Heaven', 'Arint-Rianti.jpg', '::1'),
-(5, 'Gantengan', 'NoBuy@gmail.uk', 'mypassword', 'England', 'Hyde Park', '83728190', 'Benington', 'h-man.jpg', '::1');
+(4, 'Arianti', 'AriantiCaem@yahoo.co.id', 'Anypassword', 'Indonesia', 'Central Java', '0888-9182-0332', 'Jogjakarta', 'Indonesian-Pretty.jpg', '::1'),
+(6, 'Solomiya', 'so@gmail.com', '12345', 'Ukraine', 'Lviv', '0955555555', 'Pasichna,55', 'raccoon_tree_nature_81763_1920x1080.jpg', '::1');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer_orders`
+-- Структура таблиці `customer_orders`
 --
 
 CREATE TABLE `customer_orders` (
@@ -109,21 +101,43 @@ CREATE TABLE `customer_orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `customer_orders`
+-- Дамп даних таблиці `customer_orders`
 --
 
 INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice_no`, `qty`, `size`, `order_date`, `order_status`) VALUES
-(7, 5, 225, 892058920, 5, 'Large', '2018-12-20', 'pending'),
-(8, 5, 196, 892058920, 2, 'Medium', '2018-12-20', 'pending'),
-(9, 4, 1200, 2051256671, 4, 'Medium', '2018-12-20', 'pending'),
-(10, 4, 180, 2051256671, 4, 'Small', '2018-12-20', 'pending'),
-(11, 5, 40, 690312574, 1, 'Small', '2018-12-21', 'pending'),
-(12, 4, 99, 2022964019, 1, 'Small', '2018-12-27', 'pending');
+(1, 4, 121, 1751787169, 1, 'Small', '2020-05-20', 'Complete'),
+(2, 4, 211, 1751787169, 1, 'Small', '2020-05-20', 'pending'),
+(3, 4, 99, 1751787169, 1, 'Small', '2020-05-20', 'pending'),
+(4, 5, 490, 1272670800, 5, 'Medium', '2020-05-20', 'pending'),
+(5, 5, 450, 1272670800, 5, 'Medium', '2020-05-20', 'pending');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pending_orders`
+-- Структура таблиці `payments`
+--
+
+CREATE TABLE `payments` (
+  `payment_id` int(10) NOT NULL,
+  `invoice_no` int(10) NOT NULL,
+  `amount` int(10) NOT NULL,
+  `payment_mode` text NOT NULL,
+  `ref_no` int(10) NOT NULL,
+  `code` int(10) NOT NULL,
+  `payment_date` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп даних таблиці `payments`
+--
+
+INSERT INTO `payments` (`payment_id`, `invoice_no`, `amount`, `payment_mode`, `ref_no`, `code`, `payment_date`) VALUES
+(1, 1751787169, 121, 'Western Union', 333321, 111232, '01/03/2019');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблиці `pending_orders`
 --
 
 CREATE TABLE `pending_orders` (
@@ -137,28 +151,27 @@ CREATE TABLE `pending_orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pending_orders`
+-- Дамп даних таблиці `pending_orders`
 --
 
 INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `size`, `order_status`) VALUES
-(3, 5, 892058920, '7', 5, 'Large', 'pending'),
-(4, 5, 892058920, '14', 2, 'Medium', 'pending'),
-(5, 4, 2051256671, '10', 4, 'Medium', 'pending'),
-(6, 4, 2051256671, '12', 4, 'Small', 'pending'),
-(7, 5, 690312574, '13', 1, 'Small', 'pending'),
-(8, 4, 2022964019, '16', 1, 'Small', 'pending');
+(1, 4, 1751787169, '2', 1, 'Small', 'Complete'),
+(2, 4, 1751787169, '6', 1, 'Small', 'pending'),
+(3, 4, 1751787169, '16', 1, 'Small', 'pending'),
+(4, 5, 1272670800, '14', 5, 'Medium', 'pending'),
+(5, 5, 1272670800, '15', 5, 'Medium', 'pending');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Структура таблиці `products`
 --
 
 CREATE TABLE `products` (
   `product_id` int(10) NOT NULL,
   `p_cat_id` int(10) NOT NULL,
   `cat_id` int(10) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `product_title` text NOT NULL,
   `product_img1` text NOT NULL,
   `product_img2` text NOT NULL,
@@ -169,7 +182,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `products`
+-- Дамп даних таблиці `products`
 --
 
 INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `date`, `product_title`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_keywords`, `product_desc`) VALUES
@@ -193,7 +206,7 @@ INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `date`, `product_tit
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_categories`
+-- Структура таблиці `product_categories`
 --
 
 CREATE TABLE `product_categories` (
@@ -203,7 +216,7 @@ CREATE TABLE `product_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `product_categories`
+-- Дамп даних таблиці `product_categories`
 --
 
 INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_desc`) VALUES
@@ -216,7 +229,7 @@ INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_desc`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slider`
+-- Структура таблиці `slider`
 --
 
 CREATE TABLE `slider` (
@@ -226,7 +239,7 @@ CREATE TABLE `slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `slider`
+-- Дамп даних таблиці `slider`
 --
 
 INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`) VALUES
@@ -236,99 +249,111 @@ INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`) VALUES
 (4, 'Slide number 4', 'slide-4.jpg');
 
 --
--- Indexes for dumped tables
+-- Індекси збережених таблиць
 --
 
 --
--- Indexes for table `cart`
+-- Індекси таблиці `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`p_id`);
 
 --
--- Indexes for table `categories`
+-- Індекси таблиці `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`cat_id`);
 
 --
--- Indexes for table `customers`
+-- Індекси таблиці `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Indexes for table `customer_orders`
+-- Індекси таблиці `customer_orders`
 --
 ALTER TABLE `customer_orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Indexes for table `pending_orders`
+-- Індекси таблиці `payments`
+--
+ALTER TABLE `payments`
+  ADD PRIMARY KEY (`payment_id`);
+
+--
+-- Індекси таблиці `pending_orders`
 --
 ALTER TABLE `pending_orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Indexes for table `products`
+-- Індекси таблиці `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Indexes for table `product_categories`
+-- Індекси таблиці `product_categories`
 --
 ALTER TABLE `product_categories`
   ADD PRIMARY KEY (`p_cat_id`);
 
 --
--- Indexes for table `slider`
+-- Індекси таблиці `slider`
 --
 ALTER TABLE `slider`
   ADD PRIMARY KEY (`slide_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для збережених таблиць
 --
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT для таблиці `categories`
 --
 ALTER TABLE `categories`
   MODIFY `cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `customers`
+-- AUTO_INCREMENT для таблиці `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `customer_orders`
+-- AUTO_INCREMENT для таблиці `customer_orders`
 --
 ALTER TABLE `customer_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `pending_orders`
+-- AUTO_INCREMENT для таблиці `payments`
+--
+ALTER TABLE `payments`
+  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT для таблиці `pending_orders`
 --
 ALTER TABLE `pending_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT для таблиці `products`
 --
 ALTER TABLE `products`
   MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
--- AUTO_INCREMENT for table `product_categories`
+-- AUTO_INCREMENT для таблиці `product_categories`
 --
 ALTER TABLE `product_categories`
   MODIFY `p_cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `slider`
+-- AUTO_INCREMENT для таблиці `slider`
 --
 ALTER TABLE `slider`
   MODIFY `slide_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
