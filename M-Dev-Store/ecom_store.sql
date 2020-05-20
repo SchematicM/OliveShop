@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Час створення: Трв 20 2020 р., 12:37
+-- Час створення: Трв 20 2020 р., 18:37
 -- Версія сервера: 10.4.11-MariaDB
 -- Версія PHP: 7.4.5
 
@@ -20,6 +20,32 @@ SET time_zone = "+00:00";
 --
 -- База даних: `ecom_store`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблиці `admins`
+--
+
+CREATE TABLE `admins` (
+  `admin_id` int(10) NOT NULL,
+  `admin_name` varchar(255) NOT NULL,
+  `admin_email` varchar(255) NOT NULL,
+  `admin_pass` varchar(255) NOT NULL,
+  `admin_image` text NOT NULL,
+  `admin_country` text NOT NULL,
+  `admin_about` text NOT NULL,
+  `admin_contact` varchar(255) NOT NULL,
+  `admin_job` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп даних таблиці `admins`
+--
+
+INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_country`, `admin_about`, `admin_contact`, `admin_job`) VALUES
+(1, 'MrGhie', 'mugianto1n@gmail.com', 'AdminPanelPass2019', 'raccoon_tree_nature_81763_1920x1080.jpg', 'Indonesia', 'This application is created by Mdev Media, if you willing to contact me, please click this link. <br/>\r\n                        <a href=\"#\"> M-Dev-Media </a> <br/>\r\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloribus tempore non ut velit, nesciunt totam, perspiciatis corrupti expedita nulla aut necessitatibus eius nisi. Unde quasi, recusandae doloribus minus quisquam.', '0818-0683-3157', 'Web Designer'),
+(2, 'Chelsea Islan', 'ChelseaCute@gmail.id', 'Chelsea123', 'ci.jpg', 'Indonesia', 'Chelsea about thing', '9832-9911-0083', 'Actress');
 
 -- --------------------------------------------------------
 
@@ -157,9 +183,7 @@ CREATE TABLE `pending_orders` (
 INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `size`, `order_status`) VALUES
 (1, 4, 1751787169, '2', 1, 'Small', 'Complete'),
 (2, 4, 1751787169, '6', 1, 'Small', 'pending'),
-(3, 4, 1751787169, '16', 1, 'Small', 'pending'),
-(4, 5, 1272670800, '14', 5, 'Medium', 'pending'),
-(5, 5, 1272670800, '15', 5, 'Medium', 'pending');
+(3, 4, 1751787169, '16', 1, 'Small', 'pending');
 
 -- --------------------------------------------------------
 
@@ -253,6 +277,12 @@ INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`) VALUES
 --
 
 --
+-- Індекси таблиці `admins`
+--
+ALTER TABLE `admins`
+  ADD PRIMARY KEY (`admin_id`);
+
+--
 -- Індекси таблиці `cart`
 --
 ALTER TABLE `cart`
@@ -309,6 +339,12 @@ ALTER TABLE `slider`
 --
 -- AUTO_INCREMENT для збережених таблиць
 --
+
+--
+-- AUTO_INCREMENT для таблиці `admins`
+--
+ALTER TABLE `admins`
+  MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
 -- AUTO_INCREMENT для таблиці `categories`
