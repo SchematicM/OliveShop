@@ -47,6 +47,7 @@
                            
                            ?>  
                     </li>  
+                    <li><a href="terms.php">Terms & Conditions</a></li>
                            
                 </ul><!-- ul Finish -->
                 
