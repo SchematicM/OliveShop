@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 06, 2019 at 11:17 PM
+-- Generation Time: Feb 24, 2019 at 03:55 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -256,17 +256,19 @@ INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_desc`) VALUE
 CREATE TABLE `slider` (
   `slide_id` int(10) NOT NULL,
   `slide_name` varchar(255) NOT NULL,
-  `slide_image` text NOT NULL
+  `slide_image` text NOT NULL,
+  `slide_url` varchar(255) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `slider`
 --
 
-INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`) VALUES
-(8, 'Slide Number 6', 'slide-6.jpg'),
-(9, 'Slide Number 7', 'slide-7.jpg'),
-(10, 'Editing Slide Number 8', 'slide-5.jpg');
+INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`, `slide_url`) VALUES
+(8, 'Slide Number 10', 'slider-number-15.jpg', 'http://localhost/m-dev-store/checkout.php'),
+(9, 'Slide Number 11', 'slider-number-11.jpg', 'http://localhost/m-dev-store/shop.php'),
+(16, 'Slide Number 13', 'slider-number-13.jpg', 'test.com'),
+(17, 'Slide Number 14', 'slider-number-14.jpg', 'https://youtube.com/c/mdevmedia');
 
 --
 -- Indexes for dumped tables
@@ -388,7 +390,7 @@ ALTER TABLE `product_categories`
 -- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `slide_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `slide_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
