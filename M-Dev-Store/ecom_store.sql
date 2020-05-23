@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 31, 2019 at 09:18 AM
+-- Generation Time: Feb 06, 2019 at 11:17 PM
 -- Server version: 10.1.31-MariaDB
 -- PHP Version: 7.2.3
 
@@ -45,8 +45,9 @@ CREATE TABLE `admins` (
 --
 
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_country`, `admin_about`, `admin_contact`, `admin_job`) VALUES
-(1, 'MrGhie', 'mugianto1n@gmail.com', 'AdminPanelPass2019', 'm-dev-info.jpg', 'Indonesia', 'This application is created by Mdev Media, if you willing to contact me, please click this link. <br/>\r\n                        <a href=\"#\"> M-Dev-Media </a> <br/>\r\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloribus tempore non ut velit, nesciunt totam, perspiciatis corrupti expedita nulla aut necessitatibus eius nisi. Unde quasi, recusandae doloribus minus quisquam.', '0818-0683-3157', 'Web Designer'),
-(2, 'Chelsea Islan', 'ChelseaCute@gmail.id', 'chelsea123', 'ci.jpg', 'Indonesia', 'Chelsea about thing Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci fugit beatae, voluptatibus quae sint ipsam, illum earum et, est voluptas asperiores consequatur veniam. Illum voluptas saepe, neque minima porro animi.', '9832-9911-0083', 'Actress');
+(2, 'Tatiana Saphira', 'tatiaCute@gmail.id', 'tatiana123', 'tatiana-saphira.jpg', 'Indonesia', 'Change the about description for Tatiana from chelsea Islan', '2222-2222-2222', 'MyMaid'),
+(4, 'Nozomi Sasaki', 'papipupepo@gmail.jp', 'nozo123', 'Nozomi_Sasaki-.jpg', 'Japan', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui illum debitis dolorum ducimus aut maiores veritatis illo doloremque quibusdam placeat quod velit laudantium eligendi sunt et optio, harum in suscipit.', '312-009-323', 'MyWife'),
+(5, 'Iko Uwais', 'iko@gmail.id', 'iko123', 'iko.png', 'Indonesia', 'This is for IKO', '081806833157', 'Fighter / Actor');
 
 -- --------------------------------------------------------
 
@@ -132,11 +133,8 @@ CREATE TABLE `customer_orders` (
 --
 
 INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice_no`, `qty`, `size`, `order_date`, `order_status`) VALUES
-(6, 5, 196, 1515241543, 2, 'Medium', '2019-01-31', 'pending'),
-(7, 5, 10, 1515241543, 1, 'Small', '2019-01-31', 'pending'),
-(8, 6, 121, 2025073993, 1, 'Medium', '2019-01-31', 'pending'),
-(9, 6, 255, 2025073993, 5, 'Small', '2019-01-31', 'pending'),
-(10, 6, 600, 2025073993, 2, 'Small', '2019-01-31', 'pending');
+(11, 6, 300, 206863956, 1, 'Small', '2019-02-06', 'Complete'),
+(12, 6, 10, 206863956, 1, 'Small', '2019-02-06', 'Complete');
 
 -- --------------------------------------------------------
 
@@ -153,6 +151,13 @@ CREATE TABLE `payments` (
   `code` int(10) NOT NULL,
   `payment_date` text NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `payments`
+--
+
+INSERT INTO `payments` (`payment_id`, `invoice_no`, `amount`, `payment_mode`, `ref_no`, `code`, `payment_date`) VALUES
+(6, 206863956, 10, 'Western Union', 123123, 321321, '02-09-2019');
 
 -- --------------------------------------------------------
 
@@ -175,9 +180,8 @@ CREATE TABLE `pending_orders` (
 --
 
 INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `size`, `order_status`) VALUES
-(6, 6, 2025073993, '2', 1, 'Medium', 'pending'),
-(7, 6, 2025073993, '8', 5, 'Small', 'pending'),
-(8, 6, 2025073993, '10', 2, 'Small', 'pending');
+(9, 6, 206863956, '10', 1, 'Small', 'pending'),
+(10, 6, 206863956, '15', 1, 'Small', 'pending');
 
 -- --------------------------------------------------------
 
@@ -336,7 +340,7 @@ ALTER TABLE `slider`
 -- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
 -- AUTO_INCREMENT for table `categories`
@@ -354,19 +358,19 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `customer_orders`
 --
 ALTER TABLE `customer_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
 -- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT;
+  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `pending_orders`
 --
 ALTER TABLE `pending_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `products`

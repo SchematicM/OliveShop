@@ -1,12 +1,10 @@
 <?php 
 
-
     $active='Home';
     include("includes/header.php");
 
 ?>
-
-      
+   
    <div class="container" id="slider"><!-- container Begin -->
        
        <div class="col-md-12"><!-- col-md-12 Begin -->
