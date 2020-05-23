@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.9
+-- version 5.0.2
 -- https://www.phpmyadmin.net/
 --
--- Host: 127.0.0.1
--- Generation Time: Feb 24, 2019 at 03:55 PM
--- Server version: 10.1.31-MariaDB
--- PHP Version: 7.2.3
+-- Хост: 127.0.0.1
+-- Час створення: Трв 23 2020 р., 14:15
+-- Версія сервера: 10.4.11-MariaDB
+-- Версія PHP: 7.4.5
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,13 +18,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `ecom_store`
+-- База даних: `ecom_store`
 --
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `admins`
+-- Структура таблиці `admins`
 --
 
 CREATE TABLE `admins` (
@@ -41,7 +40,7 @@ CREATE TABLE `admins` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `admins`
+-- Дамп даних таблиці `admins`
 --
 
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_country`, `admin_about`, `admin_contact`, `admin_job`) VALUES
@@ -52,7 +51,28 @@ INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `ad
 -- --------------------------------------------------------
 
 --
--- Table structure for table `cart`
+-- Структура таблиці `boxes_section`
+--
+
+CREATE TABLE `boxes_section` (
+  `box_id` int(10) NOT NULL,
+  `box_title` text NOT NULL,
+  `box_desc` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Дамп даних таблиці `boxes_section`
+--
+
+INSERT INTO `boxes_section` (`box_id`, `box_title`, `box_desc`) VALUES
+(2, ' New  Title Best Offers ', 'New Lorem ispum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel corporis maxime, ipsa modi eaque aliquid sit quaerat odit veritatis, sed autem voluptatum repudiandae commodi distinctio nisi et neque. Quis, nesciunt'),
+(3, 'New Title Box 100% Satisfy ', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores quis ratione rerum est magnam deleniti, velit ex eius. Architecto recusandae voluptas consectetur, omnis error distinctio labore blanditiis placeat veritatis harum!  '),
+(5, 'New Title Box New Box Title 4 ', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam libero accusamus pariatur! Error ut voluptatibus corrupti aliquid soluta id incidunt eos, facilis neque numquam in ab, quod itaque consectetur. Quis.');
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблиці `cart`
 --
 
 CREATE TABLE `cart` (
@@ -65,7 +85,7 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Table structure for table `categories`
+-- Структура таблиці `categories`
 --
 
 CREATE TABLE `categories` (
@@ -75,7 +95,7 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `categories`
+-- Дамп даних таблиці `categories`
 --
 
 INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_desc`) VALUES
@@ -87,7 +107,7 @@ INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_desc`) VALUES
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customers`
+-- Структура таблиці `customers`
 --
 
 CREATE TABLE `customers` (
@@ -104,7 +124,7 @@ CREATE TABLE `customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `customers`
+-- Дамп даних таблиці `customers`
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`) VALUES
@@ -114,7 +134,7 @@ INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `cust
 -- --------------------------------------------------------
 
 --
--- Table structure for table `customer_orders`
+-- Структура таблиці `customer_orders`
 --
 
 CREATE TABLE `customer_orders` (
@@ -129,7 +149,7 @@ CREATE TABLE `customer_orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `customer_orders`
+-- Дамп даних таблиці `customer_orders`
 --
 
 INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice_no`, `qty`, `size`, `order_date`, `order_status`) VALUES
@@ -139,7 +159,7 @@ INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice
 -- --------------------------------------------------------
 
 --
--- Table structure for table `payments`
+-- Структура таблиці `payments`
 --
 
 CREATE TABLE `payments` (
@@ -153,7 +173,7 @@ CREATE TABLE `payments` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `payments`
+-- Дамп даних таблиці `payments`
 --
 
 INSERT INTO `payments` (`payment_id`, `invoice_no`, `amount`, `payment_mode`, `ref_no`, `code`, `payment_date`) VALUES
@@ -162,7 +182,7 @@ INSERT INTO `payments` (`payment_id`, `invoice_no`, `amount`, `payment_mode`, `r
 -- --------------------------------------------------------
 
 --
--- Table structure for table `pending_orders`
+-- Структура таблиці `pending_orders`
 --
 
 CREATE TABLE `pending_orders` (
@@ -176,7 +196,7 @@ CREATE TABLE `pending_orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `pending_orders`
+-- Дамп даних таблиці `pending_orders`
 --
 
 INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `size`, `order_status`) VALUES
@@ -186,14 +206,14 @@ INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_
 -- --------------------------------------------------------
 
 --
--- Table structure for table `products`
+-- Структура таблиці `products`
 --
 
 CREATE TABLE `products` (
   `product_id` int(10) NOT NULL,
   `p_cat_id` int(10) NOT NULL,
   `cat_id` int(10) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
   `product_title` text NOT NULL,
   `product_img1` text NOT NULL,
   `product_img2` text NOT NULL,
@@ -204,7 +224,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `products`
+-- Дамп даних таблиці `products`
 --
 
 INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `date`, `product_title`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_keywords`, `product_desc`) VALUES
@@ -227,7 +247,7 @@ INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `date`, `product_tit
 -- --------------------------------------------------------
 
 --
--- Table structure for table `product_categories`
+-- Структура таблиці `product_categories`
 --
 
 CREATE TABLE `product_categories` (
@@ -237,7 +257,7 @@ CREATE TABLE `product_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `product_categories`
+-- Дамп даних таблиці `product_categories`
 --
 
 INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_desc`) VALUES
@@ -250,7 +270,7 @@ INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_desc`) VALUE
 -- --------------------------------------------------------
 
 --
--- Table structure for table `slider`
+-- Структура таблиці `slider`
 --
 
 CREATE TABLE `slider` (
@@ -261,133 +281,145 @@ CREATE TABLE `slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `slider`
+-- Дамп даних таблиці `slider`
 --
 
 INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`, `slide_url`) VALUES
 (8, 'Slide Number 10', 'slider-number-15.jpg', 'http://localhost/m-dev-store/checkout.php'),
 (9, 'Slide Number 11', 'slider-number-11.jpg', 'http://localhost/m-dev-store/shop.php'),
-(16, 'Slide Number 13', 'slider-number-13.jpg', 'test.com'),
+(16, 'Slide Number 13', 'slider-number-12.jpg', 'test.com'),
 (17, 'Slide Number 14', 'slider-number-14.jpg', 'https://youtube.com/c/mdevmedia');
 
 --
--- Indexes for dumped tables
+-- Індекси збережених таблиць
 --
 
 --
--- Indexes for table `admins`
+-- Індекси таблиці `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Indexes for table `cart`
+-- Індекси таблиці `boxes_section`
+--
+ALTER TABLE `boxes_section`
+  ADD PRIMARY KEY (`box_id`);
+
+--
+-- Індекси таблиці `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`p_id`);
 
 --
--- Indexes for table `categories`
+-- Індекси таблиці `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`cat_id`);
 
 --
--- Indexes for table `customers`
+-- Індекси таблиці `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Indexes for table `customer_orders`
+-- Індекси таблиці `customer_orders`
 --
 ALTER TABLE `customer_orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Indexes for table `payments`
+-- Індекси таблиці `payments`
 --
 ALTER TABLE `payments`
   ADD PRIMARY KEY (`payment_id`);
 
 --
--- Indexes for table `pending_orders`
+-- Індекси таблиці `pending_orders`
 --
 ALTER TABLE `pending_orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Indexes for table `products`
+-- Індекси таблиці `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Indexes for table `product_categories`
+-- Індекси таблиці `product_categories`
 --
 ALTER TABLE `product_categories`
   ADD PRIMARY KEY (`p_cat_id`);
 
 --
--- Indexes for table `slider`
+-- Індекси таблиці `slider`
 --
 ALTER TABLE `slider`
   ADD PRIMARY KEY (`slide_id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT для збережених таблиць
 --
 
 --
--- AUTO_INCREMENT for table `admins`
+-- AUTO_INCREMENT для таблиці `admins`
 --
 ALTER TABLE `admins`
   MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `categories`
+-- AUTO_INCREMENT для таблиці `boxes_section`
+--
+ALTER TABLE `boxes_section`
+  MODIFY `box_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT для таблиці `categories`
 --
 ALTER TABLE `categories`
   MODIFY `cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT for table `customers`
+-- AUTO_INCREMENT для таблиці `customers`
 --
 ALTER TABLE `customers`
   MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `customer_orders`
+-- AUTO_INCREMENT для таблиці `customer_orders`
 --
 ALTER TABLE `customer_orders`
   MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 
 --
--- AUTO_INCREMENT for table `payments`
+-- AUTO_INCREMENT для таблиці `payments`
 --
 ALTER TABLE `payments`
   MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT for table `pending_orders`
+-- AUTO_INCREMENT для таблиці `pending_orders`
 --
 ALTER TABLE `pending_orders`
   MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT for table `products`
+-- AUTO_INCREMENT для таблиці `products`
 --
 ALTER TABLE `products`
   MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT for table `product_categories`
+-- AUTO_INCREMENT для таблиці `product_categories`
 --
 ALTER TABLE `product_categories`
   MODIFY `p_cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT for table `slider`
+-- AUTO_INCREMENT для таблиці `slider`
 --
 ALTER TABLE `slider`
   MODIFY `slide_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=18;
