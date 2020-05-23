@@ -1,13 +1,14 @@
 -- phpMyAdmin SQL Dump
--- version 5.0.2
+-- version 4.7.9
 -- https://www.phpmyadmin.net/
 --
--- Хост: 127.0.0.1
--- Час створення: Трв 21 2020 р., 16:05
--- Версія сервера: 10.4.11-MariaDB
--- Версія PHP: 7.4.5
+-- Host: 127.0.0.1
+-- Generation Time: Jan 31, 2019 at 09:18 AM
+-- Server version: 10.1.31-MariaDB
+-- PHP Version: 7.2.3
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -18,13 +19,13 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- База даних: `ecom_store`
+-- Database: `ecom_store`
 --
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `admins`
+-- Table structure for table `admins`
 --
 
 CREATE TABLE `admins` (
@@ -37,20 +38,20 @@ CREATE TABLE `admins` (
   `admin_about` text NOT NULL,
   `admin_contact` varchar(255) NOT NULL,
   `admin_job` varchar(255) NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп даних таблиці `admins`
+-- Dumping data for table `admins`
 --
 
 INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `admin_image`, `admin_country`, `admin_about`, `admin_contact`, `admin_job`) VALUES
-(1, 'MrGhie', 'mugianto1n@gmail.com', 'AdminPanelPass2019', 'raccoon_tree_nature_81763_1920x1080.jpg', 'Indonesia', 'This application is created by Mdev Media, if you willing to contact me, please click this link. <br/>\r\n                        <a href=\"#\"> M-Dev-Media </a> <br/>\r\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloribus tempore non ut velit, nesciunt totam, perspiciatis corrupti expedita nulla aut necessitatibus eius nisi. Unde quasi, recusandae doloribus minus quisquam.', '0818-0683-3157', 'Web Designer'),
-(2, 'Chelsea Islan', 'ChelseaCute@gmail.id', 'Chelsea123', 'ci.jpg', 'Indonesia', 'Chelsea about thing', '9832-9911-0083', 'Actress');
+(1, 'MrGhie', 'mugianto1n@gmail.com', 'AdminPanelPass2019', 'm-dev-info.jpg', 'Indonesia', 'This application is created by Mdev Media, if you willing to contact me, please click this link. <br/>\r\n                        <a href=\"#\"> M-Dev-Media </a> <br/>\r\n                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci doloribus tempore non ut velit, nesciunt totam, perspiciatis corrupti expedita nulla aut necessitatibus eius nisi. Unde quasi, recusandae doloribus minus quisquam.', '0818-0683-3157', 'Web Designer'),
+(2, 'Chelsea Islan', 'ChelseaCute@gmail.id', 'chelsea123', 'ci.jpg', 'Indonesia', 'Chelsea about thing Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci fugit beatae, voluptatibus quae sint ipsam, illum earum et, est voluptas asperiores consequatur veniam. Illum voluptas saepe, neque minima porro animi.', '9832-9911-0083', 'Actress');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `cart`
+-- Table structure for table `cart`
 --
 
 CREATE TABLE `cart` (
@@ -63,7 +64,7 @@ CREATE TABLE `cart` (
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `categories`
+-- Table structure for table `categories`
 --
 
 CREATE TABLE `categories` (
@@ -73,11 +74,11 @@ CREATE TABLE `categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп даних таблиці `categories`
+-- Dumping data for table `categories`
 --
 
 INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_desc`) VALUES
-(1, ' Cat Men ', 'This Cat Men has been edited by admin of this website'),
+(1, ' Cat Men ', 'This Cat Men has been edited by the admin of this website'),
 (2, 'Women', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit rem eos illo tempora dicta possimus adipisci doloribus obcaecati odit officiis, sapiente eius excepturi harum voluptates nihil aut quo vero eveniet.'),
 (3, 'Kids', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit rem eos illo tempora dicta possimus adipisci doloribus obcaecati odit officiis, sapiente eius excepturi harum voluptates nihil aut quo vero eveniet.'),
 (4, 'Other', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit rem eos illo tempora dicta possimus adipisci doloribus obcaecati odit officiis, sapiente eius excepturi harum voluptates nihil aut quo vero eveniet.');
@@ -85,7 +86,7 @@ INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_desc`) VALUES
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `customers`
+-- Table structure for table `customers`
 --
 
 CREATE TABLE `customers` (
@@ -102,17 +103,17 @@ CREATE TABLE `customers` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп даних таблиці `customers`
+-- Dumping data for table `customers`
 --
 
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`) VALUES
-(4, 'Arianti', 'AriantiCaem@yahoo.co.id', 'Anypassword', 'Indonesia', 'Central Java', '0888-9182-0332', 'Jogjakarta', 'Indonesian-Pretty.jpg', '::1'),
-(6, 'Solomiya', 'so@gmail.com', '12345', 'Ukraine', 'Lviv', '0955555555', 'Pasichna,55', 'raccoon_tree_nature_81763_1920x1080.jpg', '::1');
+(5, 'Rianti', 'Riannti@gmail.com', 'rianti123', 'India', 'Calcuta', '8891822', 'Anywhere you want', 'member1.jpg', '::1'),
+(6, 'James Bono', 'jamesbono@gmail.com', 'james1123', 'England', 'London', '555-2255-222', 'Hyde Park', 'member2.jpg', '::1');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `customer_orders`
+-- Table structure for table `customer_orders`
 --
 
 CREATE TABLE `customer_orders` (
@@ -127,20 +128,20 @@ CREATE TABLE `customer_orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп даних таблиці `customer_orders`
+-- Dumping data for table `customer_orders`
 --
 
 INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice_no`, `qty`, `size`, `order_date`, `order_status`) VALUES
-(1, 4, 121, 1751787169, 1, 'Small', '2020-05-20', 'Complete'),
-(2, 4, 211, 1751787169, 1, 'Small', '2020-05-20', 'pending'),
-(3, 4, 99, 1751787169, 1, 'Small', '2020-05-20', 'pending'),
-(4, 5, 490, 1272670800, 5, 'Medium', '2020-05-20', 'pending'),
-(5, 5, 450, 1272670800, 5, 'Medium', '2020-05-20', 'pending');
+(6, 5, 196, 1515241543, 2, 'Medium', '2019-01-31', 'pending'),
+(7, 5, 10, 1515241543, 1, 'Small', '2019-01-31', 'pending'),
+(8, 6, 121, 2025073993, 1, 'Medium', '2019-01-31', 'pending'),
+(9, 6, 255, 2025073993, 5, 'Small', '2019-01-31', 'pending'),
+(10, 6, 600, 2025073993, 2, 'Small', '2019-01-31', 'pending');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `payments`
+-- Table structure for table `payments`
 --
 
 CREATE TABLE `payments` (
@@ -151,19 +152,12 @@ CREATE TABLE `payments` (
   `ref_no` int(10) NOT NULL,
   `code` int(10) NOT NULL,
   `payment_date` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
-
---
--- Дамп даних таблиці `payments`
---
-
-INSERT INTO `payments` (`payment_id`, `invoice_no`, `amount`, `payment_mode`, `ref_no`, `code`, `payment_date`) VALUES
-(1, 1751787169, 121, 'Western Union', 333321, 111232, '01/03/2019');
+) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `pending_orders`
+-- Table structure for table `pending_orders`
 --
 
 CREATE TABLE `pending_orders` (
@@ -177,25 +171,25 @@ CREATE TABLE `pending_orders` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп даних таблиці `pending_orders`
+-- Dumping data for table `pending_orders`
 --
 
 INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `size`, `order_status`) VALUES
-(1, 4, 1751787169, '2', 1, 'Small', 'Complete'),
-(2, 4, 1751787169, '6', 1, 'Small', 'pending'),
-(3, 4, 1751787169, '16', 1, 'Small', 'pending');
+(6, 6, 2025073993, '2', 1, 'Medium', 'pending'),
+(7, 6, 2025073993, '8', 5, 'Small', 'pending'),
+(8, 6, 2025073993, '10', 2, 'Small', 'pending');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `products`
+-- Table structure for table `products`
 --
 
 CREATE TABLE `products` (
   `product_id` int(10) NOT NULL,
   `p_cat_id` int(10) NOT NULL,
   `cat_id` int(10) NOT NULL,
-  `date` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp(),
+  `date` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
   `product_title` text NOT NULL,
   `product_img1` text NOT NULL,
   `product_img2` text NOT NULL,
@@ -206,7 +200,7 @@ CREATE TABLE `products` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп даних таблиці `products`
+-- Dumping data for table `products`
 --
 
 INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `date`, `product_title`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_keywords`, `product_desc`) VALUES
@@ -224,12 +218,12 @@ INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `date`, `product_tit
 (12, 5, 1, '2018-10-28 13:01:56', 'Man Polo Casual T-Shirt', 'Man-Polo-1.jpg', 'Man-Polo-2.jpg', 'Man-Polo-3.jpg', 45, 'Casual', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi rem nemo, autem at ad temporibus, maiores ducimus sed quam enim reprehenderit distinctio similique debitis, quis corrupti est. Sed, rem, voluptatibus!</p>'),
 (13, 5, 1, '2018-10-28 13:02:40', 'Boy Polos T-Shirt', 'polos-tshirt-1.jpg', 'polos-tshirt-2.jpg', '', 40, 'Casual', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi rem nemo, autem at ad temporibus, maiores ducimus sed quam enim reprehenderit distinctio similique debitis, quis corrupti est. Sed, rem, voluptatibus!</p>'),
 (14, 1, 1, '2018-10-28 13:03:50', 'Levi`s Trucker Jacket', 'levis-Trucker-Jacket.jpg', 'levis-Trucker-Jacket-2.jpg', 'levis-Trucker-Jacket-3.jpg', 98, 'Trucker', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi rem nemo, autem at ad temporibus, maiores ducimus sed quam enim reprehenderit distinctio similique debitis, quis corrupti est. Sed, rem, voluptatibus!</p>'),
-(15, 2, 2, '2020-05-21 10:48:44', 'Hijab Girl New', 'hijab-anak-1.jpg', 'hijab-anak-2.jpg', 'hijab-anak-3.jpg', 10, 'Hijab Kids', '<p>This is just description for sample product of hajab. Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla Bla</p>');
+(15, 2, 2, '2019-01-17 07:52:40', 'Hijab Girl New', 'hijab-anak-1.jpg', 'hijab-anak-2.jpg', 'hijab-anak-3.jpg', 10, 'Hijab Kids', '<p>This is just description for sampe product of hijab. And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha</p>');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `product_categories`
+-- Table structure for table `product_categories`
 --
 
 CREATE TABLE `product_categories` (
@@ -239,20 +233,20 @@ CREATE TABLE `product_categories` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп даних таблиці `product_categories`
+-- Dumping data for table `product_categories`
 --
 
 INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_desc`) VALUES
-(1, ' Jackets Kult', 'Test Change description for product Category'),
+(1, ' Jackets Kulit', 'Tes Change description for product category Jackets'),
 (2, 'Accessories', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit rem eos illo tempora dicta possimus adipisci doloribus obcaecati odit officiis, sapiente eius excepturi harum voluptates nihil aut quo vero eveniet.'),
 (3, 'Shoes', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit rem eos illo tempora dicta possimus adipisci doloribus obcaecati odit officiis, sapiente eius excepturi harum voluptates nihil aut quo vero eveniet.'),
-(4, ' Rain Coats ', 'This description is for the product category Rain Coat lol'),
+(4, 'Rain Coats ', 'This description is for the product category Rain Coats lol ^_^'),
 (5, 'T-Shirt', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Velit rem eos illo tempora dicta possimus adipisci doloribus obcaecati odit officiis, sapiente eius excepturi harum voluptates nihil aut quo vero eveniet.');
 
 -- --------------------------------------------------------
 
 --
--- Структура таблиці `slider`
+-- Table structure for table `slider`
 --
 
 CREATE TABLE `slider` (
@@ -262,135 +256,135 @@ CREATE TABLE `slider` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Дамп даних таблиці `slider`
+-- Dumping data for table `slider`
 --
 
 INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`) VALUES
-(6, 'Slide Number 6', 'slide-6.jpg'),
-(7, 'Slide Number 7', 'slide-7.jpg'),
-(8, 'Editing Slide Number 8', 'slide-5.jpg');
+(8, 'Slide Number 6', 'slide-6.jpg'),
+(9, 'Slide Number 7', 'slide-7.jpg'),
+(10, 'Editing Slide Number 8', 'slide-5.jpg');
 
 --
--- Індекси збережених таблиць
+-- Indexes for dumped tables
 --
 
 --
--- Індекси таблиці `admins`
+-- Indexes for table `admins`
 --
 ALTER TABLE `admins`
   ADD PRIMARY KEY (`admin_id`);
 
 --
--- Індекси таблиці `cart`
+-- Indexes for table `cart`
 --
 ALTER TABLE `cart`
   ADD PRIMARY KEY (`p_id`);
 
 --
--- Індекси таблиці `categories`
+-- Indexes for table `categories`
 --
 ALTER TABLE `categories`
   ADD PRIMARY KEY (`cat_id`);
 
 --
--- Індекси таблиці `customers`
+-- Indexes for table `customers`
 --
 ALTER TABLE `customers`
   ADD PRIMARY KEY (`customer_id`);
 
 --
--- Індекси таблиці `customer_orders`
+-- Indexes for table `customer_orders`
 --
 ALTER TABLE `customer_orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Індекси таблиці `payments`
+-- Indexes for table `payments`
 --
 ALTER TABLE `payments`
   ADD PRIMARY KEY (`payment_id`);
 
 --
--- Індекси таблиці `pending_orders`
+-- Indexes for table `pending_orders`
 --
 ALTER TABLE `pending_orders`
   ADD PRIMARY KEY (`order_id`);
 
 --
--- Індекси таблиці `products`
+-- Indexes for table `products`
 --
 ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
--- Індекси таблиці `product_categories`
+-- Indexes for table `product_categories`
 --
 ALTER TABLE `product_categories`
   ADD PRIMARY KEY (`p_cat_id`);
 
 --
--- Індекси таблиці `slider`
+-- Indexes for table `slider`
 --
 ALTER TABLE `slider`
   ADD PRIMARY KEY (`slide_id`);
 
 --
--- AUTO_INCREMENT для збережених таблиць
+-- AUTO_INCREMENT for dumped tables
 --
 
 --
--- AUTO_INCREMENT для таблиці `admins`
+-- AUTO_INCREMENT for table `admins`
 --
 ALTER TABLE `admins`
   MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 
 --
--- AUTO_INCREMENT для таблиці `categories`
+-- AUTO_INCREMENT for table `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
 
 --
--- AUTO_INCREMENT для таблиці `customers`
+-- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
   MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
--- AUTO_INCREMENT для таблиці `customer_orders`
+-- AUTO_INCREMENT for table `customer_orders`
 --
 ALTER TABLE `customer_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
--- AUTO_INCREMENT для таблиці `payments`
+-- AUTO_INCREMENT for table `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT;
 
 --
--- AUTO_INCREMENT для таблиці `pending_orders`
+-- AUTO_INCREMENT for table `pending_orders`
 --
 ALTER TABLE `pending_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
 
 --
--- AUTO_INCREMENT для таблиці `products`
+-- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
--- AUTO_INCREMENT для таблиці `product_categories`
+-- AUTO_INCREMENT for table `product_categories`
 --
 ALTER TABLE `product_categories`
-  MODIFY `p_cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `p_cat_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 
 --
--- AUTO_INCREMENT для таблиці `slider`
+-- AUTO_INCREMENT for table `slider`
 --
 ALTER TABLE `slider`
-  MODIFY `slide_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `slide_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
