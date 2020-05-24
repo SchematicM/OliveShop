@@ -33,9 +33,10 @@
            <div class="col-md-9"><!-- col-md-9 Begin -->
 
                 <div class='box'><!-- box Begin -->
-                    <h1>Shop</h1>
+                    <h1>OliveShop</h1>
                     <p>
-                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo deleniti accusamus, consequuntur illum quasi ut. Voluptate a, ipsam repellendus ut fugiat minima? Id facilis itaque autem, officiis veritatis perferendis, quaerat!
+                        OliveShop is the best online shopping site for all you fashionable women and men who never let style slip away. What you find in OliveShop is right what’s trending. We keep our catalogue updated with the latest trends so you never go out of style. We make fashion accessible and fun, so every person can get the wardrobe of her dreams. Make OliveShop  your ultimate shopping site and stay trendy always.
+                        Explore now!
                     </p>
                 </div><!-- box Finish -->
                

@@ -52,7 +52,7 @@ if(isset($_GET['pro_id'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>M-Dev Store</title>
+    <title>OliveShop</title>
     <link rel="stylesheet" href="styles/bootstrap-337.min.css">
     <link rel="stylesheet" href="font-awsome/css/font-awesome.min.css">
     <link rel="stylesheet" href="styles/style.css">
@@ -135,8 +135,8 @@ if(isset($_GET['pro_id'])){
                
                <a href="index.php" class="navbar-brand home"><!-- navbar-brand home Begin -->
                    
-                   <img src="images/ecom-store-logo.png" alt="M-dev-Store Logo" class="hidden-xs">
-                   <img src="images/ecom-store-logo-mobile.png" alt="M-dev-Store Logo Mobile" class="visible-xs">
+                   <img src="images/logo.png" alt="Olive Logo" class="hidden-xs">
+                   <img src="images/logo.png" alt="Olive Logo" class="visible-xs">
                    
                </a><!-- navbar-brand home Finish -->
                
@@ -346,9 +346,12 @@ if(isset($_GET['pro_id'])){
                                        <select name="product_size" class="form-control" required oninput="setCustomValidity('')" oninvalid="setCustomValidity('Must pick 1 size for the product')"><!-- form-control Begin -->
                                           
                                            <option disabled selected>Select a Size</option>
-                                           <option>Small</option>
-                                           <option>Medium</option>
-                                           <option>Large</option>
+                                           <option>XS</option>
+                                           <option>S</option>
+                                           <option>M</option>
+                                           <option>L</option>
+                                           <option>XL</option>
+                                           <option>XXL</option>
                                            
                                        </select><!-- form-control Finish -->
                                        
@@ -403,9 +406,12 @@ if(isset($_GET['pro_id'])){
                        <h4>Size</h4>
                        
                        <ul>
-                           <li>Small</li>
-                           <li>Medium</li>
-                           <li>Large</li>
+                           <li>XS</li>
+                           <li>S</li>
+                           <li>M</li>
+                           <li>L</li>
+                           <li>XL</li>
+                           <li>XXL</li>
                        </ul>  
                        
                        <hr>

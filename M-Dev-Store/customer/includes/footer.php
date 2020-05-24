@@ -101,12 +101,13 @@
                 
                 <p><!-- p Start -->
                     
-                    <strong>M-Dev Media inc.</strong>
-                    <br/>Cibubur
-                    <br/>Ciracas
-                    <br/>0818-0683-3157
-                    <br/>mugianto4th@gmail.com
-                    <br/><strong>MrGhie</strong>
+                    <strong>OliveShop inc.</strong>
+                    <br/>Ukraine
+                    <br/>Lviv
+                    <br/>+380123456789
+                    <br/>m@gmail.com
+                    <br/>s@gmail.com
+                    <br/><strong>Marta & Solomiya</strong>
                     
                 </p><!-- p Finish -->
                 
