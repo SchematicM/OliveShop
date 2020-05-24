@@ -145,11 +145,11 @@
                 <h4>Keep In Touch</h4>
                 
                 <p class="social">
-                    <a href="../#" class="fa fa-facebook"></a>
-                    <a href="../#" class="fa fa-twitter"></a>
-                    <a href="../#" class="fa fa-instagram"></a>
-                    <a href="../#" class="fa fa-google-plus"></a>
-                    <a href="../#" class="fa fa-envelope"></a>
+                    <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
+                    <a href="https://twitter.com/?lang=uk" class="fa fa-twitter"></a>
+                    <a href="https://www.instagram.com" class="fa fa-instagram"></a>
+                    <a href="https://myaccount.google.com/intro" class="fa fa-google-plus"></a>
+                    <a href="https://www.google.com/intl/uk/gmail/about/#" class="fa fa-envelope"></a>
                 </p>
                 
             </div>

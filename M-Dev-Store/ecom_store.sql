@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Час створення: Трв 24 2020 р., 03:46
+-- Час створення: Трв 24 2020 р., 12:22
 -- Версія сервера: 10.4.11-MariaDB
 -- Версія PHP: 7.4.5
 
@@ -47,7 +47,8 @@ INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `ad
 (2, 'Tatiana Saphira', 'tatiaCute@gmail.id', 'tatiana123', 'tatiana-saphira.jpg', 'Indonesia', 'Change the about description for Tatiana from chelsea Islan', '2222-2222-2222', 'MyMaid'),
 (4, 'Nozomi Sasaki', 'papipupepo@gmail.jp', 'nozo123', 'Nozomi_Sasaki-.jpg', 'Japan', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui illum debitis dolorum ducimus aut maiores veritatis illo doloremque quibusdam placeat quod velit laudantium eligendi sunt et optio, harum in suscipit.', '312-009-323', 'MyWife'),
 (5, 'Iko Uwais', 'iko@gmail.id', 'iko123', 'iko.png', 'Indonesia', 'This is for IKO', '081806833157', 'Fighter / Actor'),
-(6, 'Tyxa Khoma', 'test@test.com', '1234', 'AAWX9988.JPG', '???????', 'chotka baba)ahahah', '1234', 'my');
+(6, 'Tyxa Khoma', 'test@test.com', '1234', 'AAWX9988.JPG', '???????', 'chotka baba)ahahah', '1234', 'my'),
+(7, 'Solomiya Rybai', 'so@gmail.com', '12345', 's_my.jpg', 'Ukraine', 'girl girl girl girl girl ', '0955555559', 'Just Student');
 
 -- --------------------------------------------------------
 
@@ -135,7 +136,8 @@ INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `cust
 (5, 'Rianti', 'Riannti@gmail.com', 'rianti123', 'India', 'Calcuta', '8891822', 'Anywhere you want', 'member1.jpg', '::1'),
 (6, 'James Bono', 'jamesbono@gmail.com', 'james1123', 'England', 'London', '555-2255-222', 'Hyde Park', 'member2.jpg', '::1'),
 (7, 'Tyxa Khoma', 'test@test.com', '1234', '???????', 'cherkasy', '0671111111', 'fontanna, test2', 'AAWX9988.JPG', '::1'),
-(8, 'Tyxa Khoma', 'tyxa@khoma.com', '1234', 'Ukraine', 'Lviv', '0671111111', 'shevchenka 368, test2', 'AAWX9988.JPG', '::1');
+(8, 'Tyxa Khoma', 'tyxa@khoma.com', '1234', 'Ukraine', 'Lviv', '0671111111', 'shevchenka 368, test2', 'AAWX9988.JPG', '::1'),
+(9, 'Solomiya', 'sol@gmail.com', '12345', 'Ukraine', 'Lviv', '0955555559', 'Pasichna,55', 's_my.jpg', '::1');
 
 -- --------------------------------------------------------
 
@@ -161,7 +163,8 @@ CREATE TABLE `customer_orders` (
 INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice_no`, `qty`, `size`, `order_date`, `order_status`) VALUES
 (11, 6, 300, 206863956, 1, 'Small', '2019-02-06', 'Complete'),
 (12, 6, 10, 206863956, 1, 'Small', '2019-02-06', 'Complete'),
-(13, 7, 10, 472959863, 1, '', '2020-05-24', 'Complete');
+(13, 7, 10, 472959863, 1, '', '2020-05-24', 'Complete'),
+(14, 9, 5000, 1980469001, 5, 'Medium', '2020-05-24', 'Complete');
 
 -- --------------------------------------------------------
 
@@ -209,7 +212,9 @@ CREATE TABLE `payments` (
 
 INSERT INTO `payments` (`payment_id`, `invoice_no`, `amount`, `payment_mode`, `ref_no`, `code`, `payment_date`) VALUES
 (6, 206863956, 10, 'Western Union', 123123, 321321, '02-09-2019'),
-(7, 472959863, 1200, 'Back Code', 123098, 5827, '24.05.2020');
+(7, 472959863, 1200, 'Back Code', 123098, 5827, '24.05.2020'),
+(8, 2051256671, 5000, 'Payoneer', 456789, 987654, '24/05/2020'),
+(9, 2051256671, 275, 'Payoneer', 456789, 987654, '12/10/2010');
 
 -- --------------------------------------------------------
 
@@ -232,7 +237,8 @@ CREATE TABLE `pending_orders` (
 --
 
 INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `size`, `order_status`) VALUES
-(11, 7, 472959863, '15', 1, '', 'pending');
+(11, 7, 472959863, '15', 1, '', 'pending'),
+(12, 9, 1980469001, '16', 5, 'Medium', 'pending');
 
 -- --------------------------------------------------------
 
@@ -436,7 +442,7 @@ ALTER TABLE `terms`
 -- AUTO_INCREMENT для таблиці `admins`
 --
 ALTER TABLE `admins`
-  MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `admin_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT для таблиці `boxes_section`
@@ -454,13 +460,13 @@ ALTER TABLE `categories`
 -- AUTO_INCREMENT для таблиці `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `customer_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT для таблиці `customer_orders`
 --
 ALTER TABLE `customer_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
 
 --
 -- AUTO_INCREMENT для таблиці `manufacturers`
@@ -472,13 +478,13 @@ ALTER TABLE `manufacturers`
 -- AUTO_INCREMENT для таблиці `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
+  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 
 --
 -- AUTO_INCREMENT для таблиці `pending_orders`
 --
 ALTER TABLE `pending_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
 
 --
 -- AUTO_INCREMENT для таблиці `products`
