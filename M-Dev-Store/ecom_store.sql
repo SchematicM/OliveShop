@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Час створення: Трв 24 2020 р., 12:22
+-- Час створення: Трв 24 2020 р., 19:41
 -- Версія сервера: 10.4.11-MariaDB
 -- Версія PHP: 7.4.5
 
@@ -47,7 +47,7 @@ INSERT INTO `admins` (`admin_id`, `admin_name`, `admin_email`, `admin_pass`, `ad
 (2, 'Tatiana Saphira', 'tatiaCute@gmail.id', 'tatiana123', 'tatiana-saphira.jpg', 'Indonesia', 'Change the about description for Tatiana from chelsea Islan', '2222-2222-2222', 'MyMaid'),
 (4, 'Nozomi Sasaki', 'papipupepo@gmail.jp', 'nozo123', 'Nozomi_Sasaki-.jpg', 'Japan', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Qui illum debitis dolorum ducimus aut maiores veritatis illo doloremque quibusdam placeat quod velit laudantium eligendi sunt et optio, harum in suscipit.', '312-009-323', 'MyWife'),
 (5, 'Iko Uwais', 'iko@gmail.id', 'iko123', 'iko.png', 'Indonesia', 'This is for IKO', '081806833157', 'Fighter / Actor'),
-(6, 'Tyxa Khoma', 'test@test.com', '1234', 'AAWX9988.JPG', '???????', 'chotka baba)ahahah', '1234', 'my'),
+(6, 'Tyxa Khoma', 'test@test.com', '1234', 'AAWX9988.JPG', 'Ukraine', 'chotka baba) ahahahha', '1234', 'my'),
 (7, 'Solomiya Rybai', 'so@gmail.com', '12345', 's_my.jpg', 'Ukraine', 'girl girl girl girl girl ', '0955555559', 'Just Student');
 
 -- --------------------------------------------------------
@@ -67,9 +67,9 @@ CREATE TABLE `boxes_section` (
 --
 
 INSERT INTO `boxes_section` (`box_id`, `box_title`, `box_desc`) VALUES
-(2, ' New  Title Best Offers ', 'New Lorem ispum Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vel corporis maxime, ipsa modi eaque aliquid sit quaerat odit veritatis, sed autem voluptatum repudiandae commodi distinctio nisi et neque. Quis, nesciunt'),
-(3, 'New Title Box 100% Satisfy ', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores quis ratione rerum est magnam deleniti, velit ex eius. Architecto recusandae voluptas consectetur, omnis error distinctio labore blanditiis placeat veritatis harum!  '),
-(5, 'New Title Box New Box Title 4 ', 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aliquam libero accusamus pariatur! Error ut voluptatibus corrupti aliquid soluta id incidunt eos, facilis neque numquam in ab, quod itaque consectetur. Quis.');
+(2, 'Who we are.', 'We believe in a world where you have total freedom to be you, without judgement. To experiment. To express yourself. To be brave and grab life as the extraordinary adventure it is. So we make sure everyone has an equal chance to discover all the amazing things they’re capable of – no matter who they are, where they’re from or what looks they like to boss. We exist to give you the confidence to be whoever you want to be.'),
+(3, 'Brands.', 'In Oliveshop we always aim to bring new and original fashion to you, with great design at the heart of everything we create. \r\nWe select the best brends to give you the biggest variety, amazing exclusives and coolest collaborations. '),
+(5, 'Prices.', 'Shopping for cute, stylish, but inexpensive clothing can be hard! Maybe you don\'t have time to shop in person, or the stores near you just don\'t have the selection you need — or they\'re ALWAYS out of stock of the things you want. We\'re here to help with a selection of clothes that offer wallet-friendly (and fashionable) clothing so you can stay on-trend AND on-budget.');
 
 -- --------------------------------------------------------
 
@@ -104,10 +104,7 @@ CREATE TABLE `categories` (
 INSERT INTO `categories` (`cat_id`, `cat_title`, `cat_top`, `cat_image`) VALUES
 (1, ' Men ', 'yes', 'men.jpg'),
 (2, 'Women', 'no', 'women.jpg'),
-(3, 'Kids', 'no', 'kids.jpg'),
-(4, 'Other', 'yes', 'others.jpg'),
-(5, 'Teens', 'yes', 'Product-3a.jpg'),
-(6, 'workers', 'no', 'iko.png');
+(3, 'Kids', 'no', 'kids.jpg');
 
 -- --------------------------------------------------------
 
@@ -135,7 +132,6 @@ CREATE TABLE `customers` (
 INSERT INTO `customers` (`customer_id`, `customer_name`, `customer_email`, `customer_pass`, `customer_country`, `customer_city`, `customer_contact`, `customer_address`, `customer_image`, `customer_ip`) VALUES
 (5, 'Rianti', 'Riannti@gmail.com', 'rianti123', 'India', 'Calcuta', '8891822', 'Anywhere you want', 'member1.jpg', '::1'),
 (6, 'James Bono', 'jamesbono@gmail.com', 'james1123', 'England', 'London', '555-2255-222', 'Hyde Park', 'member2.jpg', '::1'),
-(7, 'Tyxa Khoma', 'test@test.com', '1234', '???????', 'cherkasy', '0671111111', 'fontanna, test2', 'AAWX9988.JPG', '::1'),
 (8, 'Tyxa Khoma', 'tyxa@khoma.com', '1234', 'Ukraine', 'Lviv', '0671111111', 'shevchenka 368, test2', 'AAWX9988.JPG', '::1'),
 (9, 'Solomiya', 'sol@gmail.com', '12345', 'Ukraine', 'Lviv', '0955555559', 'Pasichna,55', 's_my.jpg', '::1');
 
@@ -164,7 +160,10 @@ INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice
 (11, 6, 300, 206863956, 1, 'Small', '2019-02-06', 'Complete'),
 (12, 6, 10, 206863956, 1, 'Small', '2019-02-06', 'Complete'),
 (13, 7, 10, 472959863, 1, '', '2020-05-24', 'Complete'),
-(14, 9, 5000, 1980469001, 5, 'Medium', '2020-05-24', 'Complete');
+(14, 9, 5000, 1980469001, 5, 'Medium', '2020-05-24', 'Complete'),
+(16, 9, 1200, 806447541, 4, 'XL', '2020-05-24', 'pending'),
+(17, 9, 300, 390355558, 1, 'XL', '2020-05-24', 'pending'),
+(18, 9, 40, 3836970, 1, 'XXL', '2020-05-24', 'pending');
 
 -- --------------------------------------------------------
 
@@ -184,11 +183,11 @@ CREATE TABLE `manufacturers` (
 --
 
 INSERT INTO `manufacturers` (`manufacturer_id`, `manufacturer_title`, `manufacturer_top`, `manufacturer_image`) VALUES
-(1, 'Name_1', 'no', 'man_1.jpg'),
-(2, 'Name_2', 'yes', 'man_2.jpg'),
-(3, 'Name_3', 'yes', 'man_3.jpg'),
-(4, 'Name_4', 'no', 'man_4.jpg'),
-(5, 'Name_5', 'no', 'waxed-cotton-coat-woman-2.jpg');
+(1, 'Cropp', 'no', 'cropp.jpg'),
+(2, 'Bershka', 'yes', 'bershka.png'),
+(3, 'Zara', 'yes', 'zara.jpg'),
+(4, 'Sinsay', 'no', 'sinsay.jpg'),
+(5, 'Stradivarius', 'no', 'stradivarius.jpg');
 
 -- --------------------------------------------------------
 
@@ -237,8 +236,8 @@ CREATE TABLE `pending_orders` (
 --
 
 INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `size`, `order_status`) VALUES
-(11, 7, 472959863, '15', 1, '', 'pending'),
-(12, 9, 1980469001, '16', 5, 'Medium', 'pending');
+(12, 9, 1980469001, '16', 5, 'Medium', 'pending'),
+(14, 9, 806447541, '10', 4, 'XL', 'pending');
 
 -- --------------------------------------------------------
 
@@ -266,22 +265,17 @@ CREATE TABLE `products` (
 --
 
 INSERT INTO `products` (`product_id`, `p_cat_id`, `cat_id`, `manufacturer_id`, `date`, `product_title`, `product_img1`, `product_img2`, `product_img3`, `product_price`, `product_keywords`, `product_desc`) VALUES
-(1, 1, 2, 2, '2020-05-24 00:35:29', 'Tokichoi Front Pocket Collared Dress', 'product_front.jpg', 'product-back.jpg', 'product_hang.jpg', 66, 'Dress', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sapiente, dolorem tempore deleniti delectus numquam quam magni quidem veniam sequi nostrum sed eaque. Reiciendis quisquam totam nobis corrupti ullam at debitis!</p>'),
-(2, 4, 3, 3, '2020-05-24 00:35:49', 'Boys Puffer Coat With Detachable Hood', 'boys-Puffer-Coat-With-Detachable-Hood-1.jpg', 'boys-Puffer-Coat-With-Detachable-Hood-2.jpg', 'boys-Puffer-Coat-With-Detachable-Hood-3.jpg', 121, 'Hood', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cupiditate animi, voluptas neque quasi qui unde fuga porro vero magnam maiores optio amet quos temporibus? Amet saepe fugit nostrum a?</p>'),
-(3, 5, 2, 4, '2020-05-24 00:36:13', 'Girl Polos T-Shirt', 'g-polos-tshirt-1.jpg', 'g-polos-tshirt-2.jpg', 'Man-Polo-1.jpg', 55, 'Shirt', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cupiditate animi, voluptas neque quasi qui unde fuga porro vero magnam maiores optio amet quos temporibus? Amet saepe fugit nostrum a?</p>'),
-(4, 1, 1, 4, '2020-05-24 00:36:21', 'Man Geox Winter Jacket', 'Man-Geox-Winter-jacket-1.jpg', 'Man-Geox-Winter-jacket-2.jpg', 'Man-Geox-Winter-jacket-3.jpg', 100, 'Snake Skin', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cupiditate animi, voluptas neque quasi qui unde fuga porro vero magnam maiores optio amet quos temporibus? Amet saepe fugit nostrum a?</p>'),
-(5, 1, 2, 1, '2020-05-24 00:36:24', 'Women Red Winter Jacket', 'Red-Winter-jacket-1.jpg', 'Red-Winter-jacket-2.jpg', 'Red-Winter-jacket-3.jpg', 103, 'Korean Jacket', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cupiditate animi, voluptas neque quasi qui unde fuga porro vero magnam maiores optio amet quos temporibus? Amet saepe fugit nostrum a?</p>'),
-(6, 4, 2, 3, '2020-05-24 00:36:30', 'Woman Waxed Cotton Coat', 'waxed-cotton-coat-woman-1.jpg', 'waxed-cotton-coat-woman-2.jpg', 'waxed-cotton-coat-woman-3.jpg', 211, 'Cotton', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cupiditate animi, voluptas neque quasi qui unde fuga porro vero magnam maiores optio amet quos temporibus? Amet saepe fugit nostrum a?</p>'),
-(7, 3, 2, 5, '2020-05-24 00:36:34', 'High Heels Pantofel Brukat', 'High Heels Women Pantofel Brukat-1.jpg', 'High Heels Women Pantofel Brukat-2.jpg', 'High Heels Women Pantofel Brukat-3.jpg', 45, 'High Heel', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cupiditate animi, voluptas neque quasi qui unde fuga porro vero magnam maiores optio amet quos temporibus? Amet saepe fugit nostrum a?</p>'),
-(8, 3, 1, 4, '2020-05-24 00:36:41', 'Adidas Suarez Slop On', 'Man-Adidas-Suarez-Slop-On-1.jpg', 'Man-Adidas-Suarez-Slop-On-2.jpg', 'Man-Adidas-Suarez-Slop-On-3.jpg', 51, 'Adidas Suarez', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cupiditate animi, voluptas neque quasi qui unde fuga porro vero magnam maiores optio amet quos temporibus? Amet saepe fugit nostrum a?</p>'),
-(9, 2, 1, 2, '2020-05-24 00:36:46', 'Mont Blanc Belt Man', 'Mont-Blanc-Belt-man-1.jpg', 'Mont-Blanc-Belt-man-2.jpg', 'Mont-Blanc-Belt-man-3.jpg', 166, 'Belt', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cupiditate animi, voluptas neque quasi qui unde fuga porro vero magnam maiores optio amet quos temporibus? Amet saepe fugit nostrum a?</p>'),
-(10, 2, 2, 1, '2020-05-24 00:36:51', 'Diamond Heart Ring', 'women-diamond-heart-ring-1.jpg', 'women-diamond-heart-ring-2.jpg', 'women-diamond-heart-ring-3.jpg', 300, 'Ring', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Tenetur cupiditate animi, voluptas neque quasi qui unde fuga porro vero magnam maiores optio amet quos temporibus? Amet saepe fugit nostrum a?</p>'),
-(11, 5, 1, 1, '2020-05-24 00:36:56', 'Grey Man T-Shirt', 'grey-man-1.jpg', 'grey-man-2.jpg', 'grey-man-3.jpg', 50, 'Casual', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi rem nemo, autem at ad temporibus, maiores ducimus sed quam enim reprehenderit distinctio similique debitis, quis corrupti est. Sed, rem, voluptatibus!</p>'),
-(12, 5, 1, 1, '2020-05-24 00:37:00', 'Man Polo Casual T-Shirt', 'Man-Polo-1.jpg', 'Man-Polo-2.jpg', 'Man-Polo-3.jpg', 45, 'Casual', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi rem nemo, autem at ad temporibus, maiores ducimus sed quam enim reprehenderit distinctio similique debitis, quis corrupti est. Sed, rem, voluptatibus!</p>'),
-(13, 5, 1, 1, '2020-05-24 00:37:06', 'Boy Polos T-Shirt', 'polos-tshirt-1.jpg', 'polos-tshirt-2.jpg', '', 40, 'Casual', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi rem nemo, autem at ad temporibus, maiores ducimus sed quam enim reprehenderit distinctio similique debitis, quis corrupti est. Sed, rem, voluptatibus!</p>'),
-(14, 1, 1, 2, '2020-05-24 00:37:10', 'Levi`s Trucker Jacket', 'levis-Trucker-Jacket.jpg', 'levis-Trucker-Jacket-2.jpg', 'levis-Trucker-Jacket-3.jpg', 98, 'Trucker', '<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quasi rem nemo, autem at ad temporibus, maiores ducimus sed quam enim reprehenderit distinctio similique debitis, quis corrupti est. Sed, rem, voluptatibus!</p>'),
-(15, 2, 2, 2, '2020-05-24 00:37:15', 'Hijab Girl New', 'hijab-anak-1.jpg', 'hijab-anak-2.jpg', 'hijab-anak-3.jpg', 10, 'Hijab Kids', '<p>This is just description for sampe product of hijab. And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha And Cha cha cha</p>'),
-(16, 1, 2, 4, '2020-05-24 00:33:57', 'New woman Jacket', 'new-jacket-women-1.jpg', 'new-jacket-women-3.jpg', 'new-jacket-women-2.jpg', 1000, 'wonen clothes', '<p>&nbsp;good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp; good good&nbsp;</p>');
+(20, 1, 2, 4, '2020-05-24 16:48:04', 'Maroon Puffer Jacket', 'Women_Maroon_Solid_Puffer_Jacket_1.jpg', 'Women_Maroon_Solid_Puffer_Jacket_2.jpg', 'Women_Maroon_Solid_Puffer_Jacket_3.jpg', 120, 'Puffer Jacket', '<p>Maroon solid puffer jacket, has a stand collar, two pockets, zip closure, long sleeves, straight hem, polyester lining</p>\r\n<p>shell 100% polyamide,<br />lining &amp; filler 100% polyester<br />Dry-clean</p>'),
+(21, 1, 2, 2, '2020-05-24 16:52:56', 'Blue Denim Jacket', 'Denim_Jacket_1.jpg', 'Denim_Jacket_2.jpg', 'Denim_Jacket_3.jpg', 70, 'Denim Jacket', '<p>Blue washed jacket, has a spread collar, 2 pockets, button closure, long sleeves, straight hem, and unlined lining</p>'),
+(22, 5, 1, 5, '2020-05-24 16:56:36', 'Men Pink T-shirt', 'Men_Pink_Tshirt_1.jpg', 'Men_Pink_Tshirt_2.jpg', 'Men_Pink_Tshirt_3.jpg', 45, 'Men Pink Fit T-shirt', '<p>Pink solid T-shirt, has a polo collar, short sleeves.</p>'),
+(23, 2, 2, 1, '2020-05-24 17:00:02', 'Blue Skinny Jeans', 'Blue_Skinny_Jeans_1.jpg', 'Blue_Skinny_Jeans_2.jpg', 'Blue_Skinny_Jeans_3.jpg', 255, 'Blue Jeans', '<p>Blue medium wash 5-pocket mid-rise ankle length jeans, clean look with heavy fade, has a button and zip closure, waistband with belt loops</p>'),
+(24, 3, 1, 1, '2020-05-24 17:03:40', 'Yellow Pullover', 'Yellow_pullover_1.jpg', 'Yellow_pullover_2.jpg', 'Yellow_pullover_3.jpg', 300, 'Printed Hooded Pullover', '<p>Mustard yellow printed pullover sweatshirt, has a hood, two pockets, long sleeves, straight hem</p>'),
+(25, 5, 2, 4, '2020-05-24 17:07:24', 'Grey T-shirt', 'Grey_T-shirt_1.jpg', 'Grey_T-shirt_2.jpg', 'Grey_T-shirt_3.jpg', 30, 'Grey Printed T-shirt', '<p>Grey Melange printed T-shirt, has a round neck, and short sleeves</p>\r\n<p>Material: 100% cotton<br />Machine Wash</p>'),
+(26, 2, 1, 5, '2020-05-24 17:11:22', 'Men Skinny Jeans', 'Men_Blue_Skinny_Jeans_1.jpg', 'Men_Blue_Skinny_Jeans_2.jpg', 'Men_Blue_Skinny_Jeans_3.jpg', 410, 'Men Blue Jeans', '<p>Blue medium wash 5-pocket mid-rise jeans, mildly distressed with light fade, has a button and zip closure, waistband with belt loops</p>'),
+(27, 4, 3, 4, '2020-05-24 17:13:56', 'Peach-Coloured Dress', 'Girls_Peach_Coloured_Dress_1.jpg', 'Girls_Peach_Coloured_Dress_2.jpg', 'Girls_Peach_Coloured_Dress_3.jpg', 220, 'Peach-Coloured Dress', '<p>Peach-Coloured self-design knitted fit and flare dress, has a round neck, sleeveless, button closure, an attached lining, flared hem.</p>'),
+(28, 5, 3, 2, '2020-05-24 17:16:48', 'Yellow Printed T-shirt', 'Girls_Yellow_Printed_T-shirt_1.jpg', 'Girls_Yellow_Printed_T-shirt_2.jpg', 'Girls_Yellow_Printed_T-shirt_3.jpg', 50, 'Yellow T-shirt', '<p>Yellow printed T-shirt, has a round neck, short sleeves</p>\r\n<p>Cotton<br />Machine-wash</p>'),
+(29, 3, 1, 1, '2020-05-24 17:19:34', 'Men Black Sweatshirt', 'Black _Hooded_Sweatshirt_1.jpg', 'Black _Hooded_Sweatshirt_2.jpg', 'Black _Hooded_Sweatshirt_3.jpg', 550, 'Men Sweatshirt Black', '<p>Black printed sweatshirt, has an attached hood, long sleeves, straight hem</p>'),
+(30, 4, 2, 3, '2020-05-24 17:22:32', 'Red Solid Dress', 'Women_Red_Dress_1.jpg', 'Women_Red_Dress_2.jpg', 'Women_Red_Dress_3.jpg', 600, 'Solid A-Line Dress', '<p>Red solid knitted and woven A-line dress with gathered detail, has a tie-up neck, three-quarter sleeves, button closure, an attached lining, and flounce hem</p>');
 
 -- --------------------------------------------------------
 
@@ -301,11 +295,11 @@ CREATE TABLE `product_categories` (
 --
 
 INSERT INTO `product_categories` (`p_cat_id`, `p_cat_title`, `p_cat_top`, `p_cat_image`) VALUES
-(1, ' Jackets', 'yes', 'jacket.jpg'),
-(2, 'Accessories', 'no', 'acc.jpg'),
-(3, 'Shoes', 'no', 'shoes.jpg'),
-(4, 'Coats ', 'yes', 'coat.jpg'),
-(5, 'T-Shirt', 'no', 'tshirt.jpg');
+(1, '  Jackets ', 'yes', 'jacket.jpg'),
+(2, 'Jeans', 'no', 'jeans.jpg'),
+(3, 'Hoodies', 'no', 'hoodie.jpg'),
+(4, ' Dresses ', 'yes', 'dress.jpg'),
+(5, ' T-Shirts ', 'no', 'tshirt.jpg');
 
 -- --------------------------------------------------------
 
@@ -325,10 +319,10 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`, `slide_url`) VALUES
-(8, 'Slide Number 10', 'slider-number-15.jpg', 'http://localhost/m-dev-store/checkout.php'),
-(9, 'Slide Number 11', 'slider-number-11.jpg', 'http://localhost/m-dev-store/shop.php'),
-(16, 'Slide Number 13', 'slider-number-12.jpg', 'test.com'),
-(17, 'Slide Number 14', 'slider-number-14.jpg', 'https://youtube.com/c/mdevmedia');
+(8, 'Slide Number 10', 'slider-number-10.jpg', 'http://localhost/m-dev-store/index.php'),
+(9, 'Slide Number 11', 'slider-number-11.jpg', 'http://localhost/m-dev-store/index.php'),
+(16, 'Slide Number 13', 'slider-number-12.jpg', 'http://localhost/m-dev-store/index.php'),
+(17, 'Slide Number 14', 'slider-number-14.jpg', 'http://localhost/m-dev-store/index.php');
 
 -- --------------------------------------------------------
 
@@ -348,9 +342,9 @@ CREATE TABLE `terms` (
 --
 
 INSERT INTO `terms` (`term_id`, `term_title`, `term_link`, `term_desc`) VALUES
-(7, 'Rules & Regulations', 'link_1', '<p><span style=\"font-size: 14px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat itaque cum, voluptatum officiis, odit quibusdam saepe, ea quasi natus ut sit! Adipisci expedita fugiat dignissimos accusamus, sunt, unde possimus eligendi.<br />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat itaque cum, voluptatum officiis, odit quibusdam saepe, ea quasi natus ut sit! Adipisci expedita fugiat dignissimos accusamus, sunt, unde possimus eligendi.</span></p>'),
-(8, 'Promo & Regulations', 'link_2', '<p><span style=\"font-size: 14px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat itaque cum, voluptatum officiis, odit quibusdam saepe, ea quasi natus ut sit! Adipisci expedita fugiat dignissimos accusamus, sunt, unde possimus eligendi.<br /><br />Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat itaque cum, voluptatum officiis, odit quibusdam saepe, ea quasi natus ut sit! Adipisci expedita fugiat dignissimos accusamus, sunt, unde possimus eligendi.</span></p>'),
-(9, 'Refund Condition Policy', 'link_3', '<p><span style=\"font-size: 14px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat itaque cum, voluptatum officiis, odit quibusdam saepe, ea quasi natus ut sit! Adipisci expedita fugiat dignissimos accusamus, sunt, unde possimus eligendi.</span></p>\r\n<p><span style=\"font-size: 14px;\">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fugiat itaque cum, voluptatum officiis, odit quibusdam saepe, ea quasi natus ut sit! Adipisci expedita fugiat dignissimos accusamus, sunt, unde possimus eligendi.</span></p>');
+(7, 'PRIVACY POLICY', 'link_1', '<p><span style=\"font-size: 14px;\">SECTION 1 - WHAT DO WE DO WITH YOUR INFORMATION?</span></p>\r\n<p><span style=\"font-size: 14px;\">When you purchase something from our store, as part of the buying and selling process, we collect the personal information you give us such as your name, address and email address.</span></p>\r\n<p><span style=\"font-size: 14px;\">When you browse our store, we also automatically receive your computer&rsquo;s internet protocol (IP) address in order to provide us with information that helps us learn about your browser and operating system.</span></p>\r\n<p><span style=\"font-size: 14px;\">Email marketing (if applicable): With your permission, we may send you emails about our store, new products, and other updates.</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size: 14px;\">SECTION 2 - CONSENT</span></p>\r\n<p><span style=\"font-size: 14px;\">How do you get my consent?</span></p>\r\n<p><span style=\"font-size: 14px;\">When you provide us with personal information to complete a transaction, verify your credit card, place an order, arrange for a delivery or return a purchase, we imply that you consent to our collecting it and using it for that specific reason only.</span></p>\r\n<p><span style=\"font-size: 14px;\">If we ask for your personal information for a secondary reason, like marketing, we will either ask you directly for your expressed consent or provide you with an opportunity to say no.</span></p>\r\n<p><span style=\"font-size: 14px;\">How do I withdraw my consent?</span></p>\r\n<p><span style=\"font-size: 14px;\">If after you opt-in, you change your mind, you may withdraw your consent for us to contact you, for the continued collection, use or disclosure of your information, at any time, by contacting us at Babagala711@gmail.com</span></p>\r\n<p><span style=\"font-size: 14px;\">&nbsp;</span></p>\r\n<p><span style=\"font-size: 14px;\">SECTION 3 - DISCLOSURE</span></p>\r\n<p><span style=\"font-size: 14px;\">We may disclose your personal information if we are required by law to do so or if you violate our Terms of Service.</span></p>\r\n<p>&nbsp;</p>\r\n<p><span style=\"font-size: 14px;\">SECTION 4 - SECURITY</span></p>\r\n<p><span style=\"font-size: 14px;\">To protect your personal information, we take reasonable precautions and follow industry best practices to make sure it is not inappropriately lost, misused, accessed, disclosed, altered or destroyed.</span></p>'),
+(8, 'SHIPPING POLICY', 'link_2', '<p><span style=\"font-size: 14px;\">Free shipping for more than 30 countries.</span></p>\r\n<p><span style=\"font-size: 14px;\">Standard shipping time 5-7 days.</span></p>'),
+(9, 'REFUND POLICY', 'link_3', '<p><span style=\"font-size: 14px;\">Returns</span></p>\r\n<p><span style=\"font-size: 14px;\">Our policy lasts 40 days. If 40 days have gone by since your purchase, unfortunately, we can&rsquo;t offer you a refund or exchange.</span></p>\r\n<p><span style=\"font-size: 14px;\">&nbsp;</span></p>\r\n<p><span style=\"font-size: 14px;\">To be eligible for a return, your item must be unused and in the same condition that you received it. It must also be in the original packaging and labels.</span></p>\r\n<p><span style=\"font-size: 14px;\">&nbsp;</span></p>\r\n<p><span style=\"font-size: 14px;\">Several types of goods are exempt from being returned. Perishable goods such as food, flowers, newspapers or magazines cannot be returned. We also do not accept products that are intimate or sanitary goods, hazardous materials, or flammable liquids or gases.</span></p>\r\n<p><span style=\"font-size: 14px;\">&nbsp;</span></p>\r\n<p><span style=\"font-size: 14px;\">There are certain situations where only partial refunds are granted (if applicable)</span></p>\r\n<p><span style=\"font-size: 14px;\">&nbsp;</span></p>\r\n<p><span style=\"font-size: 14px;\">Shipping</span></p>\r\n<p><span style=\"font-size: 14px;\">To return your product, you should get mail addresses by email:&nbsp;</span></p>\r\n<p><span style=\"font-size: 14px;\">m@gmail.com&nbsp;</span></p>\r\n<p><span style=\"font-size: 14px;\">s@gmail.com&nbsp;</span></p>\r\n<p><span style=\"font-size: 14px;\">&nbsp;</span></p>\r\n<p><span style=\"font-size: 14px;\">You will be responsible for paying for your own shipping costs for returning your item. Shipping costs are non-refundable. If you receive a refund, the cost of return shipping will be deducted from your refund.</span></p>\r\n<p><span style=\"font-size: 14px;\">&nbsp;</span></p>\r\n<p><span style=\"font-size: 14px;\">Depending on where you live, the time it may take for your exchanged product to reach you may vary.</span></p>\r\n<p><span style=\"font-size: 14px;\">&nbsp;</span></p>\r\n<p><span style=\"font-size: 14px;\">If you are shipping an item over $75, you should consider using a trackable shipping service or purchasing shipping insurance. We don&rsquo;t guarantee that we will receive your returned item.</span></p>\r\n<p><span style=\"font-size: 14px;\">After Arrived returning products and processing quality we will refund the customer paid the amount.</span></p>\r\n<p>&nbsp;</p>');
 
 --
 -- Індекси збережених таблиць
@@ -466,7 +460,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT для таблиці `customer_orders`
 --
 ALTER TABLE `customer_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT для таблиці `manufacturers`
@@ -484,13 +478,13 @@ ALTER TABLE `payments`
 -- AUTO_INCREMENT для таблиці `pending_orders`
 --
 ALTER TABLE `pending_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=14;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
 
 --
 -- AUTO_INCREMENT для таблиці `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `product_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=31;
 
 --
 -- AUTO_INCREMENT для таблиці `product_categories`
