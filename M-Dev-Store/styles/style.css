@@ -463,7 +463,7 @@ body{
     color: #fff;
 }
 .product a img.img-responsive{
-    max-height: 252px;
+    max-height: 320px;
     width: 100%;
 }
 

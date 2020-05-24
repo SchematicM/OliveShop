@@ -30,9 +30,9 @@
         
         <tbody><!--  tbody Begin  -->
         
-            <td> Bank Name: URL | Account No: 180-839-032 | Branch Name : Lahore | Branch Code: 1498 </td>
-            <td> NIC # 980-231-907 | Mobile No: 0931-7894-9983 | Name: MrGhie </td>
-            <td> Real Name: Mr Mughianto | Mobile No: 0931-7894-9983 Country : Pakistan | Name : MrGhie | NIC # 980-231-907 </td>
+            <td> Bank Name: URL | Account No: 180-839-032 | Branch Name : Marta | Branch Code: 1498 </td>
+            <td> NIC # 980-231-907 | Mobile No: 0931-7894-998 | Name: Tyxa </td>
+            <td> Real Name: Khoma Marta | Mobile No: 0931-7894-998 Country : Ukraine | Name : Marta | NIC # 980-231-907 </td>
 
         </tbody><!--  tbody Finish  -->
         

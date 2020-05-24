@@ -18,24 +18,13 @@
     
      <p class="lead text-center"><!-- lead text-center Begin -->
          
-         <a href="order.php?c_id=<?php echo $customer_id ?>"> Offline Payment </a>
-         
+         <a href="order.php?c_id=<?php echo $customer_id ?>"> Offline Payment 
+         <img class="img-responsive" src="images/paypall.png" alt="img-paypall">
+         </a>
      </p><!-- lead text-center Finish -->
      
-     <center><!-- center Begin -->
+
          
-        <p class="lead"><!-- lead Begin -->
-            
-            <a href="#">
-                
-                Paypall Payment
-                
-                <img class="img-responsive" src="images/paypall_img.png" alt="img-paypall">
-                
-            </a>
-            
-        </p> <!-- lead Finish -->
-         
-     </center><!-- center Finish -->
+
     
 </div><!-- box Finish -->

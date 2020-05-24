@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Хост: 127.0.0.1
--- Час створення: Трв 24 2020 р., 19:41
+-- Час створення: Трв 24 2020 р., 22:12
 -- Версія сервера: 10.4.11-MariaDB
 -- Версія PHP: 7.4.5
 
@@ -163,7 +163,9 @@ INSERT INTO `customer_orders` (`order_id`, `customer_id`, `due_amount`, `invoice
 (14, 9, 5000, 1980469001, 5, 'Medium', '2020-05-24', 'Complete'),
 (16, 9, 1200, 806447541, 4, 'XL', '2020-05-24', 'pending'),
 (17, 9, 300, 390355558, 1, 'XL', '2020-05-24', 'pending'),
-(18, 9, 40, 3836970, 1, 'XXL', '2020-05-24', 'pending');
+(18, 9, 40, 3836970, 1, 'XXL', '2020-05-24', 'pending'),
+(19, 8, 600, 747566244, 1, 'S', '2020-05-24', 'Complete'),
+(20, 8, 120, 557874368, 1, '', '2020-05-24', 'Complete');
 
 -- --------------------------------------------------------
 
@@ -213,7 +215,9 @@ INSERT INTO `payments` (`payment_id`, `invoice_no`, `amount`, `payment_mode`, `r
 (6, 206863956, 10, 'Western Union', 123123, 321321, '02-09-2019'),
 (7, 472959863, 1200, 'Back Code', 123098, 5827, '24.05.2020'),
 (8, 2051256671, 5000, 'Payoneer', 456789, 987654, '24/05/2020'),
-(9, 2051256671, 275, 'Payoneer', 456789, 987654, '12/10/2010');
+(9, 2051256671, 275, 'Payoneer', 456789, 987654, '12/10/2010'),
+(10, 747566244, 600, 'Back Code', 2147483647, 5827, '24.05.2020'),
+(11, 2018426470, 103, 'Western Union', 2147483647, 2147483647, '24.05.2020');
 
 -- --------------------------------------------------------
 
@@ -236,8 +240,7 @@ CREATE TABLE `pending_orders` (
 --
 
 INSERT INTO `pending_orders` (`order_id`, `customer_id`, `invoice_no`, `product_id`, `qty`, `size`, `order_status`) VALUES
-(12, 9, 1980469001, '16', 5, 'Medium', 'pending'),
-(14, 9, 806447541, '10', 4, 'XL', 'pending');
+(17, 8, 747566244, '30', 1, 'S', 'pending');
 
 -- --------------------------------------------------------
 
@@ -319,10 +322,10 @@ CREATE TABLE `slider` (
 --
 
 INSERT INTO `slider` (`slide_id`, `slide_name`, `slide_image`, `slide_url`) VALUES
-(8, 'Slide Number 10', 'slider-number-10.jpg', 'http://localhost/m-dev-store/index.php'),
-(9, 'Slide Number 11', 'slider-number-11.jpg', 'http://localhost/m-dev-store/index.php'),
-(16, 'Slide Number 13', 'slider-number-12.jpg', 'http://localhost/m-dev-store/index.php'),
-(17, 'Slide Number 14', 'slider-number-14.jpg', 'http://localhost/m-dev-store/index.php');
+(8, 'Slide Number 10', 'zara.jpg', 'http://localhost/m-dev-store/index.php'),
+(9, 'Slide Number 11', 'Bershka.jpg', 'http://localhost/m-dev-store/index.php'),
+(16, 'Slide Number 13', 'stradivarius.jpg', 'http://localhost/m-dev-store/index.php'),
+(17, 'Slide Number 14', 'sinsay.jpg', 'http://localhost/m-dev-store/index.php');
 
 -- --------------------------------------------------------
 
@@ -460,7 +463,7 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT для таблиці `customer_orders`
 --
 ALTER TABLE `customer_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=21;
 
 --
 -- AUTO_INCREMENT для таблиці `manufacturers`
@@ -472,13 +475,13 @@ ALTER TABLE `manufacturers`
 -- AUTO_INCREMENT для таблиці `payments`
 --
 ALTER TABLE `payments`
-  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
+  MODIFY `payment_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- AUTO_INCREMENT для таблиці `pending_orders`
 --
 ALTER TABLE `pending_orders`
-  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=17;
+  MODIFY `order_id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=19;
 
 --
 -- AUTO_INCREMENT для таблиці `products`
